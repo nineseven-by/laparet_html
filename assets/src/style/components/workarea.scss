@@ -1,0 +1,303 @@
+.workarea,
+.popup{
+	line-height: 1.8;
+	h1{
+		margin: 0;
+		margin-bottom: 30px;
+		font-size: 55px;
+		line-height: 1.2;
+		font-weight: normal;
+		text-transform: uppercase;
+		letter-spacing: 10px;
+	}
+	h2{
+		margin: 0;
+		margin-bottom: 29px;
+		font-size: 50px;
+		line-height: 1.2;
+		font-weight: normal;
+		text-transform: uppercase;
+		letter-spacing: 10px;
+		//font-family: 'tt_normsbold';
+	}
+	h3{
+	    margin: 0;
+	    margin-bottom: 30px;
+	    font-weight: normal;
+	    font-size: 42px;
+	    line-height: 1.2;
+		text-transform: uppercase;
+		letter-spacing: 10px;
+	    //font-family: 'tt_normsbold';
+	}
+	h4{
+	    margin: 0;
+	    margin-bottom: 30px;
+	    font-weight: normal;
+	    font-size: 36px;
+	    line-height: 1.2;
+	    text-transform: uppercase;
+		letter-spacing: 10px;
+	}
+	h5{
+	    margin: 0;
+	    margin-bottom: 30px;
+	    font-weight: normal;
+	    font-size: 28px;
+	    line-height: 1.2;
+	    text-transform: uppercase;
+		letter-spacing: 7px;
+	}
+	h6{
+	    margin: 0;
+	    margin-bottom: 20px;
+	    font-weight: normal;
+	    font-size: 18px;
+	    line-height: 1.2;
+	    text-transform: uppercase;
+		letter-spacing: 4px;
+	}
+	p{
+		margin: 0;
+		margin-bottom: 20px;
+	}
+
+
+	input[type="text"],
+	input[type="email"],
+	input[type="password"]{
+		width: 100%;
+		display: block;
+		vertical-align: middle;
+		color: $base-color;
+		border:0;
+		border-bottom: 1px solid #272726;
+		font-size: 14px;
+		padding: 4px 15px 5px 0;
+		&:focus{
+			border-bottom: 1px solid #82D5DB;
+		}
+	}
+	textarea{
+		display: block;
+		width: 100%;
+		min-height: 120px;
+		resize: vertical;
+		color: $base-color;
+		border:0;
+		border-bottom: 1px solid #272726;
+		font-size: 14px;
+		padding: 4px 15px 5px 0;
+	}
+
+	ol{
+		margin: 0;
+		margin-bottom: 22px;
+		padding: 0;
+		counter-reset: myCounter;
+		li{
+			list-style-type: none;
+			padding-left: 28px;
+			position: relative;
+			margin-bottom: 14px;
+			&:before{
+				counter-increment: myCounter;
+				content:counter(myCounter) ".";
+				position: absolute;
+				left: 0;
+    			top: 0;
+				color: #272726;
+				//font-family: 'tt_normsbold';
+			}
+		}
+	}
+	ul{
+		margin: 0;
+		margin-bottom: 22px;
+		padding: 0;
+		li{
+			list-style-type: none;
+			padding-left: 28px;
+			position: relative;
+			margin-bottom: 14px;
+			&:before{
+				content: "";
+				position: absolute;
+				left: 0;
+				top: 13px;
+				background-color: #272726;
+				width: 10px;
+				height: 1.5px;
+			}
+		}
+	}
+	table{
+		width: 100%;
+    	min-width: 576px;
+    	margin-bottom: 20px;
+    	//table-layout: fixed;
+	}
+	td{
+		padding: 32px 10px 32px 31px;
+	}
+	th{
+		text-align: left;
+		font-weight: normal;
+		font-size: 18px;
+		letter-spacing: 4px;
+		text-transform: uppercase;
+		color: #fff;
+		padding: 31px 10px 11px 31px;
+	}
+	thead{
+		background: linear-gradient(114.28deg, #B09580 14.33%, #82D6DB 118.93%);
+	}
+	blockquote{
+		display: block;
+	    font-size: 24px;
+	    color: #7A1774;
+	    text-align: center;
+	    max-width: 700px;
+	    margin: 25px auto;
+	    padding: 25px 0;
+	    position: relative;
+		&:before{
+			content: "";
+			display: block;
+			width: 400px;
+			height: 1px;
+			background: #E3E0EB;
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			top: 0;
+		} 
+		&:after{
+			content: "";
+			display: block;
+			width: 400px;
+			height: 1px;
+			background: #E3E0EB;
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			bottom: 0;
+		} 
+	}
+	strong{
+		font-family: 'suisse_intlbold';
+		font-weight: normal;
+	}
+	input[type="checkbox"] + label{
+		transition: all .25s ease;
+		color: $base-color;
+	}
+	input[type="checkbox"]:not(:checked),
+	input[type="checkbox"]:checked{
+		position: absolute;
+		left: -9999px;
+	}
+	input[type="checkbox"]:not(:checked) + label,
+	input[type="checkbox"]:checked + label{
+		position: relative;
+		cursor: pointer;
+		padding-left: 28px;
+    	line-height: 18px;
+		display: inline-block;
+	}
+
+
+	input[type="checkbox"]:not(:checked) + label:before,
+	input[type="checkbox"]:checked + label:before{
+		content: '';
+		position: absolute;
+		left: 0;
+		top: -1px;
+		background: #FFFFFF;
+		border: 1px solid #272726;
+		cursor: pointer;
+		z-index: 1;
+		width: 18px;
+		height: 18px;
+		transition: all .3s ease;
+	}
+	input[type="checkbox"]:not(:checked) + label:hover:before{
+		border: 1px solid $alt-color;
+	}
+	input[type="checkbox"]:not(:checked) + label:hover{
+		color: $alt-color;
+	}
+
+	input[type="checkbox"]:checked + label{
+		color: $alt-color;
+	}
+	input[type="checkbox"]:checked + label:before{
+		border: 1px solid #3ABDB5;
+	}
+	input[type="checkbox"]:not(:checked) + label:after,
+	input[type="checkbox"]:checked + label:after {
+		content: '';
+		background: url(../img/svg/check.svg) center no-repeat;
+		width: 19px;
+		height: 15px;
+		display: inline-block;
+		position: absolute;
+		top: -1px;
+		left: 3px;
+		z-index: 2;
+	}
+	input[type="checkbox"]:not(:checked) + label:after {
+	 	opacity: 0;
+	}
+	input[type="checkbox"]:checked + label:after {
+	    opacity: 1;
+	}
+
+	select{
+		display: block;
+		width: 100%;
+		background: #fff;
+		color: #272726;
+		border: 0;
+		border-bottom: 1px solid #272726;
+		font-size: 14px;
+		padding: 4px 15px 5px 0;
+		-moz-appearance: none;
+		-webkit-appearance: none;
+		appearance: none;
+		background-image: url(../img/svg/arr.svg);
+		background-repeat: no-repeat;
+		/* arrow icon position (1em from the right, 50% vertical) , then gradient position*/
+		background-position: right 17px top 50%, 0 0;
+		/* icon size, then gradient */
+		//background-size: .65em auto, 100%;
+	}
+}
+
+
+
+
+.table-wrap{
+    overflow-x: auto;
+    width: 100%;
+    margin: 0 0 40px;
+    table{
+        margin-bottom: 0;
+    }
+	&::-webkit-scrollbar {
+		height: 5px;
+	   	width: 1px;
+   	}
+	
+   	&::-webkit-scrollbar-track {
+	   // -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+	   border-radius: 20px;
+	   background: #fff;;
+	//    border: 1px solid red;
+   	}
+	
+   	&::-webkit-scrollbar-thumb {
+	   border-radius: 20px;
+	   background:$alt-color;
+   	}
+}

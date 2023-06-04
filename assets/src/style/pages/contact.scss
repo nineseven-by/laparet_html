@@ -1,0 +1,107 @@
+.contact {
+    &__wrap{
+        display: flex;
+        align-items: flex-start;
+    }
+    .page-form{
+        flex:1;
+        margin-right: 12px;
+    }
+}
+.contact-view{
+    width: 562px;
+    margin-left: 15px;
+    position: relative;
+    margin-top: 10px;
+    &:after{
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 5px;
+        top: 5px;
+        background: linear-gradient(149.75deg,#b09580 -5.51%,#82d6db 102.56%);
+    }
+    &__in{
+        background: #fff;
+        position: relative;
+        padding:24px 46px 42px;
+        z-index: 1;
+    }
+    &__list{
+        padding-right: 50px;
+    }
+    &__item{
+        margin-bottom: 14px;
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+
+    &__address{
+        padding-left: 25px;
+        position: relative;
+        &:before{
+            content: "";
+            display: inline-block;
+            width: 14px;
+            height: 16px;
+            background: url(../img/content/address.png) center/cover no-repeat;
+            position: absolute;
+            left: 0;
+            top: 6px;
+        }
+    }
+    &__mail{
+        color: $alt-color;
+        padding-left: 25px;
+        position: relative;
+        &:before{
+            content: "";
+            display: inline-block;
+            width: 14px;
+            height: 12px;
+            background: url(../img/content/mail.png) center/cover no-repeat;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+    &__link{
+        color: $alt-color;
+        padding-left: 25px;
+    }
+}
+
+.tabs-wrap{
+    border-bottom: 1px solid #878782;
+    margin-bottom: 33px;
+    display: flex;
+}
+
+.tab-btn{
+    color: #272726;
+    text-transform: uppercase;
+    font-size: 15px;
+    letter-spacing: 5px;
+    padding: 0 14px 14px 14px;
+    position: relative;
+    &:hover{
+        color: #3ABDB5;
+    }
+    &.m-active{
+        &:after{
+            content: "";
+            display: block;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(106.08deg, #B09580 10.01%, #82D6DB 89.94%);
+            position: absolute;
+            bottom: -1.5px;
+            left: 0;
+
+        }
+    }
+}

@@ -1,0 +1,42 @@
+.layout{
+    &.m404{
+
+        background: linear-gradient(152.9deg, #B09580 -3.92%, #82D6DB 105%);
+        color: #fff;
+        .workarea{
+            h1{
+                font-size: 80px;
+            }
+            h2{
+                margin-bottom: 50px;
+            }
+        }
+    }
+}
+
+.p404{
+    max-width: 660px;
+    margin: 0 auto;
+    &__txt{
+        font-size: 19px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 31px;
+    }
+    &__item{
+        margin-bottom: 25px;
+        font-size: 19px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        &:last-child{
+            margin-bottom: 0;
+        }
+        a{
+            color: #fff;
+            border-bottom: 1px solid #fff;
+            &:hover{
+                border-bottom: 1px solid transparent;
+            }
+        }
+    }
+}

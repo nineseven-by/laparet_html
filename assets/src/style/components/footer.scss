@@ -1,0 +1,123 @@
+.page-footer{
+	flex-shrink: 0;
+	border-top: 2px solid #1D201E;
+	
+	&__wrap{
+		display: flex;
+		padding: 53px 0 37px;
+		position: relative;
+	}
+}
+
+.bottom{
+	background: #1D201E;
+	color: #fff;
+	font-size: 14px;
+	&__wrap{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 14px 0;
+	}
+	&__policy{
+		color: #fff;
+		&:hover{
+			color: $alt-color;
+		}
+	}
+}
+
+.develop{
+	display: inline-flex;
+	align-items: center;
+	&__link{
+		display: inline-block;
+		width: 62px;
+		height: 16px;
+		margin-left: 13px;
+		background: url(../img/svg/97.svg) center/cover no-repeat;
+		transition: all .25s ease;
+		&:hover{
+			background: url(../img/svg/97-h.svg) center/cover no-repeat;
+		}
+	}
+}
+
+.page-footer-menu{
+	flex:1;
+	overflow: hidden;
+	margin-right: 177px;
+	&__wrap{
+		margin: 0 -30px;
+		display: flex;
+	}
+	&__item{
+		padding: 0 30px;
+		flex: 1;
+	}
+	&__top{
+		font-family: 'suisse_intlbold', sans-serif;
+		font-size: 18px;
+		line-height: 1.2;
+		margin-bottom: 17px;
+		color: $base-color;
+		display: block;
+	}
+	&__link{
+		display: block;
+		color: $base-color;
+		margin-bottom: 13px;
+		&:last-child{
+			margin-bottom: 0;
+		}
+		&:hover{
+			color: $alt-color;
+		}
+	}
+}
+.page-footer-contact{
+	width: 252px;
+}
+
+.socials{
+	display: flex;
+	align-items: center;
+	&__link{
+		margin-right: 20px;
+		display: inline-block;
+		transition: all .25s ease;
+		&:last-child{
+			margin-right: 0;
+		}
+		&.m-insta{
+			width: 21px;
+			height: 21px;
+			background: url(../img/svg/insta.svg) center no-repeat;
+			&:hover{
+				background: url(../img/svg/insta-h.svg) center no-repeat;
+			}
+		}
+		&.m-linked{
+			width: 21px;
+			height: 21px;
+			background: url(../img/svg/linked.svg) center no-repeat;
+			&:hover{
+				background: url(../img/svg/linked-h.svg) center no-repeat;
+			}
+		}
+		&.m-fb{
+			width: 12px;
+			height: 20px;
+			background: url(../img/svg/fb.svg) center no-repeat;
+			&:hover{
+				background: url(../img/svg/fb-h.svg) center no-repeat;
+			}
+		}
+	}
+}
+
+a.page-footer-menu__top{
+	&:hover{
+		color: $alt-color;
+	}
+}

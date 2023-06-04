@@ -1,0 +1,203 @@
+.report{
+    overflow: hidden;
+    &__list{
+        margin: 0 -15px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__item{
+        width: 25%;
+        padding: 0 15px;
+        margin-bottom: 56px;
+        &.m-triple{
+            width: 33.333%;
+            .report__in{
+                display: flex;
+                justify-content: flex-end;
+            }
+            .report__info{
+                width: calc(100% - 100px);
+            }
+        }
+    }
+    &__in{
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: 20px 0 0 20px;
+
+       
+        &:hover{
+            .report__info{
+                background: linear-gradient(162.84deg, #B09580 -37.77%, #82D6DB 133.32%);
+                border: 1px solid #82D6DB;
+            }
+            .report__title{
+                color: #fff;
+            }
+
+            .report__btn{
+                color: #3ABDB5;
+                border: 1px solid #fff;
+                background: #fff;
+                &:after{
+                    background: url(../img/svg/download-h.svg) center/cover no-repeat;
+                }
+            }
+        }
+    }
+    &__img{
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 249px;
+        width: calc(100% - 20px);
+        z-index: 1;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &__info{
+        padding: 250px 36px 99px 40px;
+        border: 1px solid #272726;
+        transition: all .25s ease;
+        height: 100%;
+        position: relative;
+        background: #fff;
+    }
+    &__title{
+        font-size: 18px;
+        line-height: 1.7;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        transition: all .25s ease;
+
+        color: #272726;
+    }
+    &__btn{
+        position: absolute;
+        bottom: 40px;
+        left: 40px;
+        display: inline-flex;
+        align-items: center;
+        border: 1px solid #272726;
+        font-size: 16px;
+        text-transform: uppercase;
+        color: #272726;
+        padding: 5px 16px;
+        transition: all .25s ease;
+        &:after{
+            content: "";
+            display: inline-block;
+            width: 13px;
+            height: 13px;
+            background: url(../img/svg/download.svg) center/cover no-repeat;
+            margin-left: 11px;
+            transition: all .25s ease;
+        }
+    }
+}
+
+
+.report-top{
+    margin-bottom: 30px;
+    position: relative;
+    &__img{
+        img{
+            display: block;
+            max-width: 100%;
+        }
+    }
+    &__info{
+        
+        
+        
+        position: relative;
+        &:after{
+            content: "";
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            background: linear-gradient(149.75deg,#b09580 -5.51%,#82d6db 102.56%);
+        }
+    }
+    &__title{
+        font-size: 42px;
+        letter-spacing: 10px;
+        text-transform: uppercase;
+        line-height: 1.2;
+        margin-bottom: 25px;
+    }
+    &__in{
+        position: relative;
+        z-index: 1;
+        background: #fff;
+        padding: 41px 88px 46px 50px;
+        width: 558px;
+    }
+}
+.report-top-view{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.report-top-info-wrap{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.trend{
+    &__list{
+        display: flex;
+        margin: 0 -15px;
+    }
+    &__item{
+        width: 25%;
+        padding: 0 15px;
+        &.m-half{
+            width: 50%;
+        }
+    }
+    &__img{
+        margin-bottom: 12px;
+        height: 281px;
+        img{
+            display: block;
+            max-width: 100%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &__in{
+        display: block;
+        width: 100%;
+        height: 100%;
+        &:hover{
+           .trend__title{
+            color: $alt-color;
+           } 
+        }
+    }
+    &__title{
+        font-size: 18px;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+
+        color: #272726;
+        transition: all .25s ease;
+    }
+}
