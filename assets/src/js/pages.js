@@ -22,5 +22,6 @@ $('body').append(
 		<li><a href="catalog.html">catalog</a></li> \
 		<li><a href="page404.html">page404</a></li> \
 		<li><a href="index.html">Index</a></li> \
+		<li><a href="search.html">search</a></li> \
 	</ol> \
 </div>');

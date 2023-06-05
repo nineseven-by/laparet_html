@@ -54,6 +54,12 @@ ymaps[class$="-copyright"] {
 		font-size: 55px;
 		text-transform: uppercase;
 	}
+	&.m-search{
+		color: #878782;
+		span{
+			color: #272726;
+		}
+	}
 }
 
 .container-min{
@@ -738,5 +744,48 @@ a.collection__top{
 		&:before{
 			opacity: 1;
 		}
+	}
+}
+
+
+.search{
+	.products__list{
+		margin-bottom: 40px;
+	}
+}
+
+.search-list{
+	border-top: 1px solid #272726;
+}
+
+.search-item{
+	border-bottom: 1px solid #272726;
+	padding: 20px 0;
+	display: block;
+	color: #272726;
+	&:last-child{
+		border-bottom: 0;
+	}
+	&:hover{
+		color: $alt-color;
+		.search-item__top{
+			color: $alt-color;
+		}
+	}
+	&__top{
+		.page-breadcrumbs__link{
+			opacity: 0.6;
+		}
+	}
+	&__title{
+		font-size: 18px;
+		letter-spacing: 4px;
+		text-transform: uppercase;
+		span{
+			font-family: 'suisse_intlbold';
+		}
+	}
+	&__txt{
+		color: $base-color;
 	}
 }
