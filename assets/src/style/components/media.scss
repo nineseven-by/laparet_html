@@ -200,6 +200,9 @@
     .hero-info__item:before {
         top: 8px;
     }
+    .page-header-submenu__sec {
+        font-size: 14px;
+    }
 }
 
 
@@ -885,6 +888,12 @@
     .report-labels__item span {
         height: 27px;
         padding: 0 4px;
+    }
+    .menu-mobile__toggle {
+        right: -28px;
+    }
+    .menu-mobile {
+        right: -100%;
     }
 }
 

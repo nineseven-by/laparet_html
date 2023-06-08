@@ -20,6 +20,13 @@ $(document).ready(function() {
 	    },150);
 	});
 
+	//MOBILE SUBMENU
+	$('body').on('click','.js-menu-mobile__toggle', function(e){
+		e.preventDefault();
+		$(this).toggleClass('active');
+		$(this).parents('.menu-mobile__item').find('.menu-mobile-sub').slideToggle(150);
+	});
+
 
 	//TABLE-WRAP
 	if ($("table").length > 0) {
