@@ -8,20 +8,20 @@ $('body').append(
 		#pages li { margin: 5px 0; } \
 	</style> \
 	<ol id="pages"> \
-		<li><a href="text.html">Text</a></li> \
-		<li><a href="contact.html">contact</a></li> \
-		<li><a href="events.html">events</a></li> \
-		<li><a href="collections.html">collections</a></li> \
-		<li><a href="collections2.html">collections2</a></li> \
-		<li><a href="report.html">report</a></li> \
-		<li><a href="report2.html">report2</a></li> \
-		<li><a href="articles.html">articles</a></li> \
-		<li><a href="gallery.html">gallery</a></li> \
+		<li><a href="index.html">index_09</a></li> \
+		<li><a href="catalog.html">catalog_02</a></li> \
 		<li><a href="item.html">item</a></li> \
-		<li><a href="item2.html">item2</a></li> \
-		<li><a href="catalog.html">catalog</a></li> \
-		<li><a href="page404.html">page404</a></li> \
-		<li><a href="index.html">Index</a></li> \
+		<li><a href="item2.html">element</a></li> \
+		<li><a href="gallery.html">inspiration gallery</a></li> \
+		<li><a href="articles.html">inspiration gallery2</a></li> \
+		<li><a href="report2.html">trend report</a></li> \
+		<li><a href="report.html">trend report pdf</a></li> \
+		<li><a href="events.html">events</a></li> \
+		<li><a href="collections.html">As seen on... season</a></li> \
+		<li><a href="collections2.html">As seen on...</a></li> \
+		<li><a href="contact.html">trend report3</a></li> \
+		<li><a href="text.html">text</a></li> \
+		<li><a href="page404.html">404</a></li> \
 		<li><a href="search.html">search</a></li> \
 	</ol> \
 </div>');
