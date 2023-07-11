@@ -409,6 +409,13 @@
         flex:1;
         
         overflow: hidden;
+        position: relative;
+        .main-collections-view__label{
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 3;
+        }
     }
     &__info{
         width: 440px;
@@ -547,5 +554,37 @@
             }
         }
         
+    }
+}
+
+
+
+.item-top__line{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 558px;
+}
+
+.item-top-download{
+    display: inline-block;
+    color: #3ABDB5;
+    font-size: 16px;
+    width: calc(50% - 20px);
+    line-height: 1.2;
+    padding-left: 16px;
+    position: relative;
+    &::before{
+        content: "";
+        display: inline-block;
+        width: 13px;
+        height: 14px;
+        background: url(../img/svg/t-download.svg) no-repeat;
+        position: absolute;
+        top: 2px;
+        left: 0;
+    }
+    span{
+        color: #878782;
     }
 }

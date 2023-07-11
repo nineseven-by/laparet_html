@@ -254,7 +254,14 @@
     }
     &__item{
         margin: 0 80px;
-        
+        position: relative;
+        .main-collections-view__label{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            // z-index: 3;
+        }
     }
     &__img{
         
