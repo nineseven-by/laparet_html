@@ -178,23 +178,37 @@
                 </div>
             </div>
 		</main>
-	</div><!-- END LAYOUT-->
-	//= template/footer.html
-
-    <div class="cookies">
-        <div class="cookies__wrap">
-            <div class="cookies__view">
-                <div class="cookies__txt">
-                    To improve the operation of the site and its interaction with the visitor, we use cookies.
-                    By continuing to use the site, you allow the use of cookies. 
-                </div>
-                <div class="cookies-buttons">
-                    <a href="#" class="btn-accept"><span>accept</span></a>
-                    <a href="#" class="btn">Refuse</a>
+        <div class="page-popup" id="pagePopup1">
+            <div class="page-popup__inner">
+                <div class="page-popup__view">
+                    <h3>successfully sent</h3>
+                    <a href="#" class="page-popup__close js-page-popup__close">Ок, thanks</a>
                 </div>
             </div>
         </div>
-    </div>
+        <script>
+            let closeButton = document.querySelectorAll(".js-page-popup__close");
+            let page_popup = document.querySelectorAll(".page-popup");
+            for (let button of closeButton) {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    
+
+                    document.getElementById('pagePopup1').style.display="none";
+                });
+            }
+
+
+            // var hide = function (elem) {
+            //     elem.style.display = 'none';
+            // };
+        </script>
+	</div><!-- END LAYOUT-->
+
+    
+
+	//= template/footer.html
+
 
 	<script src="js/libs/libs.min.js"></script>
 	<script src="js/interface.js"></script>

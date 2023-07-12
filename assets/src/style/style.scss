@@ -268,6 +268,17 @@ a.page-breadcrumbs__link{
 	}
 }
 
+.page-form-msg{
+	color: #C90B0B;
+	font-size: 12px;
+	line-height: 1;
+	margin-top: 7px;
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+}
+
 .page-form{
 	margin-bottom: 70px;
 	background: #FFFFFF;
@@ -275,8 +286,23 @@ a.page-breadcrumbs__link{
 	padding: 44px 59px 52px 52px;
 	&__item{
 		margin-bottom: 33.5px;
+		position: relative;
 		&.m-phone{
 			width: 218px;
+		}
+		&.m-error{
+			input[type=email],
+			input[type=password],
+			input[type=text],
+			select{
+				border-bottom: 1px solid #C90B0B;
+			}
+			.page-form__label{
+				color: #C90B0B;
+			}
+			.page-form-msg{
+				display: block;
+			}
 		}
 	}
 	&__label{
@@ -293,6 +319,9 @@ a.page-breadcrumbs__link{
 	.page-form__item{
 		padding: 0 15px;
 		width: 50%;
+	}
+	.page-form-msg{
+		left: 15px;
 	}
 }
 
@@ -331,17 +360,18 @@ a.page-breadcrumbs__link{
 		transition: all .25s ease;
 	}
 	&:hover{
-		--bg-size: 400%;
-		--color-one: #B09580;
-		--color-two: #82D6DB;
-		background: linear-gradient(
-			90deg,
-			var(--color-one),
-			var(--color-two),
-			var(--color-one)
-		) 0 0 / var(--bg-size) 100%;
-		color: transparent;
-		background-clip: text;
+		// --bg-size: 400%;
+		// --color-one: #B09580;
+		// --color-two: #82D6DB;
+		// background: linear-gradient(
+		// 	90deg,
+		// 	var(--color-one),
+		// 	var(--color-two),
+		// 	var(--color-one)
+		// ) 0 0 / var(--bg-size) 100%;
+		// color: transparent;
+		// background-clip: text;
+		color: #82D6DB;
 		&:after{
 			background: url(../img/svg/s-arr-h.svg) center/cover no-repeat;
 		}
@@ -788,4 +818,41 @@ a.collection__top{
 	&__txt{
 		color: $base-color;
 	}
+}
+
+.page-item{
+	margin-bottom: 30px;
+	&:last-child{
+		margin-bottom: 0;
+	}
+}
+
+
+.page-popup{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.4);
+	z-index: 9999;
+	&__inner{
+		width: 100%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	&__view{
+		max-width: 557px;
+		background: #fff;
+		padding: 37px 48px;
+	}
+}
+
+.page-popup__close{
+	display: inline-block;
+	color: #3ABDB5;
+	letter-spacing: 4px;
+	text-transform: uppercase;
 }

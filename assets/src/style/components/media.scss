@@ -396,23 +396,23 @@
         width: 224px;
         margin-right: 20px;
     }
-    .popup h1, .workarea h1{
+    .popup h1, .workarea h1, .page-popup h1{
         font-size: 40px;
         letter-spacing: 6px;
     }
-    .popup h2, .workarea h2{
+    .popup h2, .workarea h2,.page-popup h2{
         font-size: 35px;
     }
-    .popup h3, .workarea h3{
+    .popup h3, .workarea h3, .page-popup h3{
         font-size: 31px;
     }
-    .popup h4, .workarea h4{
+    .popup h4, .workarea h4, .page-popup h4{
         font-size: 27px;
     }
-    .popup h5, .workarea h5{
+    .popup h5, .workarea h5, .page-popup h5{
         font-size: 24px;
     }
-    .popup h6, .workarea h6{
+    .popup h6, .workarea h6, .page-popup h6{
         font-size: 20px;
     }
     .accordion__link {
@@ -591,23 +591,23 @@
     .page-header__wrap {
         padding: 0;
     }
-    .popup h1, .workarea h1{
+    .popup h1, .workarea h1, .page-popup h1{
         font-size: 35px;
         letter-spacing: 6px;
     }
-    .popup h2, .workarea h2{
+    .popup h2, .workarea h2, .page-popup h2{
         font-size: 30px;
     }
-    .popup h3, .workarea h3{
+    .popup h3, .workarea h3, .page-popup h3{
         font-size: 26px;
     }
-    .popup h4, .workarea h4{
+    .popup h4, .workarea h4, .page-popup h4{
         font-size: 23px;
     }
-    .popup h5, .workarea h5{
+    .popup h5, .workarea h5, .page-popup h5{
         font-size: 20px;
     }
-    .popup h6, .workarea h6{
+    .popup h6, .workarea h6, .page-popup h6{
         font-size: 18px;
     }
     .accordion__link {
@@ -900,6 +900,9 @@
     }
     .menu-mobile {
         right: -100%;
+    }
+    .report-top__title {
+        letter-spacing: 3px;
     }
 }
 

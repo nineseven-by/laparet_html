@@ -20,6 +20,7 @@ $('body').append(
 		<li><a href="collections.html">As seen on... season</a></li> \
 		<li><a href="collections2.html">As seen on...</a></li> \
 		<li><a href="contact.html">trend report3</a></li> \
+		<li><a href="contact-success.html">contact-success</a></li> \
 		<li><a href="text.html">text</a></li> \
 		<li><a href="page404.html">404</a></li> \
 		<li><a href="search.html">search</a></li> \

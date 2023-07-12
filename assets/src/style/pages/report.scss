@@ -140,6 +140,23 @@
         background: #fff;
         padding: 41px 88px 46px 50px;
         width: 558px;
+        .item-top-download{
+            width: 100%;
+            color: #272726;
+            &:before{
+                background: url(../img/svg/t-download-bl.svg) no-repeat;
+            }
+            &:hover{
+                color: #3abdb5;
+            }
+        }
+    }
+    &__txt{
+        margin-bottom: 28px;
+        &:last-child{
+            margin-bottom: 0;
+        }
+        
     }
 }
 .report-top-view{
