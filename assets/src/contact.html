@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     //= template/head.html
+
 </head>
 <body>
 	<!--LAYOUT-->
@@ -67,15 +68,9 @@
                                         </select>
                                         <div class="page-form-msg">Сheck the field</div>
                                     </div>
-                                    <div class="page-form__item m-error">
+                                    <div class="page-form__item">
                                         <div class="page-form__label">Country</div>
-                                        <select>
-                                            <option value="" disabled selected hidden>Please select...</option>
-                                            <option value="Country 1">Country 1</option>
-                                            <option value="Country 2">Country 2</option>
-                                            <option value="Country 3">Country 3</option>
-                                            <option value="Country 4">Country 4</option>
-                                        </select>
+                                        <input type="tel" class="phoneselect" id="phone"></input>
                                         <div class="page-form-msg">Сheck the field</div>
                                     </div>
                                     
@@ -117,13 +112,13 @@
                                                 <div class="contact-view__address">
                                                     Level 20, 48 Burj Gate Tower, Downtown Dubai PO BOX 36615 UAE +971 54 40 51051
                                                 </div>
-                                                <a href="#" class="contact-view__link">Show on map</a>
+                                                <a href="#" class="contact-view__link popup-trigger" data-popup-trigger="one">Show on map</a>
                                             </div>
                                             <div class="contact-view__item">
                                                 <div class="contact-view__address">
                                                     155 N. Lake Avenue, 8th Floor, Pasadena, California, 91101, United States of America 1-800-216-2337
                                                 </div>
-                                                <a href="#" class="contact-view__link">Show on map</a>
+                                                <a href="#" class="contact-view__link popup-trigger" data-popup-trigger="two">Show on map</a>
                                             </div>
                                             <div class="contact-view__item">
                                                 <a href="mailto:info@Laparet.com" class="contact-view__mail">info@Laparet.com</a>
@@ -136,13 +131,13 @@
                                                 <div class="contact-view__address">
                                                     test test
                                                 </div>
-                                                <a href="#" class="contact-view__link">Show on map</a>
+                                                <a href="#" class="contact-view__link popup-trigger" data-popup-trigger="three">Show on map</a>
                                             </div>
                                             <div class="contact-view__item">
                                                 <div class="contact-view__address">
                                                     155 N. Lake Avenue, 8th Floor, Pasadena, California, 91101, United States of America 1-800-216-2337
                                                 </div>
-                                                <a href="#" class="contact-view__link">Show on map</a>
+                                                <a href="#" class="contact-view__link popup-trigger" data-popup-trigger="four">Show on map</a>
                                             </div>
                                             <div class="contact-view__item">
                                                 <a href="mailto:info@Laparet.com" class="contact-view__mail">info@Laparet.com</a>
@@ -155,13 +150,13 @@
                                                 <div class="contact-view__address">
                                                     Level 20, 48 Burj Gate Tower, Downtown Dubai PO BOX 36615 UAE +971 54 40 51051
                                                 </div>
-                                                <a href="#" class="contact-view__link">Show on map</a>
+                                                <a href="#" class="contact-view__link popup-trigger" data-popup-trigger="five">Show on map</a>
                                             </div>
                                             <div class="contact-view__item">
                                                 <div class="contact-view__address">
                                                     test test test
                                                 </div>
-                                                <a href="#" class="contact-view__link">Show on map</a>
+                                                <a href="#" class="contact-view__link popup-trigger" data-popup-trigger="six">Show on map</a>
                                             </div>
                                             <div class="contact-view__item">
                                                 <a href="mailto:info@Laparet.com" class="contact-view__mail">info@Laparet.com</a>
@@ -172,8 +167,6 @@
                             </div>
                         </div>
                     </div>
-
-                    
                     <!-- CONTENT-END -->
                 </div>
             </div>
@@ -195,6 +188,64 @@
             </div>
         </div>
     </div>
+
+
+    <div class="popup-modal" data-popup-modal="one">
+        <i class="popup-modal__close"></i>
+        <div class="popup-modal__top">Level 20, 48 Burj Gate Tower, Downtown Dubai PO BOX 36615 UAE</div>
+        <div class="c-map-wrap">
+            <div class="c-map" id="map1"></div>
+        </div>
+    </div>
+
+    <div class="popup-modal" data-popup-modal="two">
+        <i class="popup-modal__close"></i>
+        <div class="popup-modal__top">Map2</div>
+        <div class="c-map-wrap">
+            <div class="c-map" id="map2"></div>
+        </div>
+    </div>
+
+    <div class="popup-modal" data-popup-modal="three">
+        <i class="popup-modal__close"></i>
+        <div class="popup-modal__top">Map3</div>
+        <div class="c-map-wrap">
+            <div class="c-map" id="map3"></div>
+        </div>
+    </div>
+
+    <div class="popup-modal" data-popup-modal="four">
+        <i class="popup-modal__close"></i>
+        <div class="popup-modal__top">Map4</div>
+        <div class="c-map-wrap">
+            <div class="c-map" id="map4"></div>
+        </div>
+    </div>
+
+    <div class="popup-modal" data-popup-modal="five">
+        <i class="popup-modal__close"></i>
+        <div class="popup-modal__top">Map5</div>
+        <div class="c-map-wrap">
+            <div class="c-map" id="map5"></div>
+        </div>
+    </div>
+
+    <div class="popup-modal" data-popup-modal="six">
+        <i class="popup-modal__close"></i>
+        <div class="popup-modal__top">Map6</div>
+        <div class="c-map-wrap">
+            <div class="c-map" id="map6"></div>
+        </div>
+    </div>
+
+    <div class="body-blackout"></div>
+
+
+    <!-- prettier-ignore -->
+    <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
+        ({key: "AIzaSyBgMh77VknUY6hsQrshRoR4MqrDjWPDHM4", v: "weekly"});</script>
+
+    <script src="js/maps.js"></script>
 
 	<script src="js/libs/libs.min.js"></script>
 	<script src="js/interface.js"></script>

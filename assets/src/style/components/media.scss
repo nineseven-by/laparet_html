@@ -262,6 +262,17 @@
     .top-search__input {
         width: calc(100vw - 475px);
     }
+    .popup-modal{
+        width: 100%;
+        left: 0;
+        transform: translate(0,-50%);
+    }
+    .popup-modal__top{
+        font-size: 20px;
+    }
+    .c-map-wrap {
+        height: 480px;
+    }
 }
 
 
@@ -903,6 +914,17 @@
     }
     .report-top__title {
         letter-spacing: 3px;
+    }
+    .iti__country {
+        white-space: nowrap;
+        font-size: 14px;
+    }
+    .popup-modal__top {
+        font-size: 14px;
+        letter-spacing: 3px;
+    }
+    .c-map-wrap {
+        height: 400px;
     }
 }
 

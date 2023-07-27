@@ -335,6 +335,65 @@ $(document).ready(function() {
 		})
 
 	}
+
+
+
+	//PHONE-SELECT
+	if ($("#phone").length>0) {
+		var input = document.querySelector("#phone");
+		window.intlTelInput(input, {
+			utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/utils.js",//only for placeholders
+			onlyCountries: ["ru", "by", "cn", "us"],
+			initialCountry:"us",
+			preferredCountries:false,
+			separateDialCode:true,
+			nationalMode: false,
+		});
+	};
+
+
+	if($('.contact').length>0){
+		//popup
+		const modalTriggers = document.querySelectorAll('.popup-trigger');
+		const modalCloseTrigger = document.querySelectorAll('.modal-close');
+		const p_modal = document.querySelectorAll('.popup-modal');
+		const bodyBlackout = document.querySelector('.body-blackout');
+
+	
+
+		modalTriggers.forEach(trigger => {
+			trigger.addEventListener('click', (e) => {
+				e.preventDefault();
+
+				const { popupTrigger } = trigger.dataset;
+
+				const popupModal = document.querySelector(`[data-popup-modal="${popupTrigger}"]`);
+
+				// Array.from(document.querySelectorAll('.popup-modal')).forEach(
+				// 	(el) => el.classList.remove('is--visible')
+				// );
+
+				popupModal.classList.add('is--visible');
+
+				bodyBlackout.classList.add('is-blacked-out');
+
+				popupModal.querySelector('.popup-modal__close').addEventListener('click', () => {
+					popupModal.classList.remove('is--visible')
+					bodyBlackout.classList.remove('is-blacked-out')
+				});
+
+				bodyBlackout.addEventListener('click', () => {
+					popupModal.classList.remove('is--visible')
+					bodyBlackout.classList.remove('is-blacked-out')
+				});
+
+				popupModal.querySelector('.modal-close').addEventListener('click', () => {
+					popupModal.classList.remove('is--visible')
+					bodyBlackout.classList.remove('is-blacked-out')
+				});
+			})
+		});
+	}
 });
 
 
