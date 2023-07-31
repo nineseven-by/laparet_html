@@ -1,4 +1,4 @@
 node_modules/
 .vscode/
-# assets/build/
+# assets/assets/build/build/
 package-lock.json
