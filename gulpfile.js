@@ -3,41 +3,41 @@
 /* пути к исходным файлам (src), к готовым файлам (build), а также к тем, за изменениями которых нужно наблюдать (watch) */
 var path = {
     build: {
-        html: 'assets/build/',
-        js: 'assets/build/js/',
-        js_libs: 'assets/build/js/libs/',
-        css: 'assets/build/css/',
-        img: 'assets/build/img/',
-        favicon: 'assets/build/favicon/',
-        fonts: 'assets/build/fonts/'
+        html: 'assets/assets/build/build/',
+        js: 'assets/assets/build/build/js/',
+        js_libs: 'assets/assets/build/build/js/libs/',
+        css: 'assets/assets/build/build/css/',
+        img: 'assets/assets/build/build/img/',
+        favicon: 'assets/assets/build/build/favicon/',
+        fonts: 'assets/assets/build/build/fonts/'
     },
     src: {
-        html: 'assets/src/*.html',
-        js: 'assets/src/js/interface.js',
-        style: 'assets/src/style/main.scss',
-        img: 'assets/src/img/**/*.*',
-        favicon: 'assets/src/favicon/**/*.*',
-        fonts: 'assets/src/fonts/**/*.*'
+        html: 'assets/assets/build/src/*.html',
+        js: 'assets/assets/build/src/js/interface.js',
+        style: 'assets/assets/build/src/style/main.scss',
+        img: 'assets/assets/build/src/img/**/*.*',
+        favicon: 'assets/assets/build/src/favicon/**/*.*',
+        fonts: 'assets/assets/build/src/fonts/**/*.*'
     },
     watch: {
-        html: 'assets/src/**/*.html',
-        js: 'assets/src/js/*.js',
-        css: 'assets/src/style/**/*.scss',
-        img: 'assets/src/img/**/*.*',
-        favicon: 'assets/src/favicon/**/*.*',
-        fonts: 'assets/srs/fonts/**/*.*'
+        html: 'assets/assets/build/src/**/*.html',
+        js: 'assets/assets/build/src/js/*.js',
+        css: 'assets/assets/build/src/style/**/*.scss',
+        img: 'assets/assets/build/src/img/**/*.*',
+        favicon: 'assets/assets/build/src/favicon/**/*.*',
+        fonts: 'assets/assets/build/srs/fonts/**/*.*'
     },
     libs: {
-        js: 'assets/src/js/libs/*.js',
-        style: 'assets/src/style/libs.scss',
+        js: 'assets/assets/build/src/js/libs/*.js',
+        style: 'assets/assets/build/src/style/libs.scss',
     },
-    clean: './assets/build/*'
+    clean: './assets/assets/build/build/*'
 };
 
 /* настройки сервера */
 var config = {
     server: {
-        baseDir: './assets/build'
+        baseDir: './assets/assets/build/build'
     },
     notify: false
 };
@@ -114,8 +114,12 @@ gulp.task('favicon:build', function() {
 gulp.task('js:build', function () {
     return gulp.src([
             path.src.js,
+<<<<<<< Updated upstream
             'assets/src/js/pages.js',
             'assets/src/js/maps.js',
+=======
+            'assets/assets/build/src/js/pages.js',
+>>>>>>> Stashed changes
         ]) // получим файл interface.js
         .pipe(plumber()) // для отслеживания ошибок
         .pipe(rigger()) // импортируем все указанные файлы в interface.js
@@ -131,7 +135,7 @@ gulp.task('js:build', function () {
 // сбор libs_js
 gulp.task('libs:build', function () {
     return gulp.src([
-            'assets/src/js/jquery/jquery.js',
+            'assets/assets/build/src/js/jquery/jquery.js',
             path.libs.js
         ]) // файлы libs
         .pipe(plumber()) // для отслеживания ошибок
