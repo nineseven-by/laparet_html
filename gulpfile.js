@@ -1,107 +1,100 @@
 'use strict';
 
-/* пути к исходным файлам (src), к готовым файлам (build), а также к тем, за изменениями которых нужно наблюдать (watch) */
 var path = {
     build: {
-        html: 'assets/assets/build/build/',
-        js: 'assets/assets/build/build/js/',
-        js_libs: 'assets/assets/build/build/js/libs/',
-        css: 'assets/assets/build/build/css/',
-        img: 'assets/assets/build/build/img/',
-        favicon: 'assets/assets/build/build/favicon/',
-        fonts: 'assets/assets/build/build/fonts/'
+        html: 'assets/build/',
+        js: 'assets/build/js/',
+        js_libs: 'assets/build/js/libs/',
+        css: 'assets/build/css/',
+        img: 'assets/build/img/',
+        favicon: 'assets/build/favicon/',
+        fonts: 'assets/build/fonts/'
+
     },
     src: {
-        html: 'assets/assets/build/src/*.html',
-        js: 'assets/assets/build/src/js/interface.js',
-        style: 'assets/assets/build/src/style/main.scss',
-        img: 'assets/assets/build/src/img/**/*.*',
-        favicon: 'assets/assets/build/src/favicon/**/*.*',
-        fonts: 'assets/assets/build/src/fonts/**/*.*'
+        html: 'assets/src/*.html',
+        js: 'assets/src/js/interface.js',
+        style: 'assets/src/style/main.scss',
+        img: 'assets/src/img/**/*.*',
+        favicon: 'assets/src/favicon/**/*.*',
+        fonts: 'assets/src/fonts/**/*.*'
+
     },
     watch: {
-        html: 'assets/assets/build/src/**/*.html',
-        js: 'assets/assets/build/src/js/*.js',
-        css: 'assets/assets/build/src/style/**/*.scss',
-        img: 'assets/assets/build/src/img/**/*.*',
-        favicon: 'assets/assets/build/src/favicon/**/*.*',
-        fonts: 'assets/assets/build/srs/fonts/**/*.*'
+        html: 'assets/src/**/*.html',
+        js: 'assets/src/js/*.js',
+        css: 'assets/src/style/**/*.scss',
+        img: 'assets/src/img/**/*.*',
+        favicon: 'assets/src/favicon/**/*.*',
+        fonts: 'assets/srs/fonts/**/*.*'
+
     },
     libs: {
-        js: 'assets/assets/build/src/js/libs/*.js',
-        style: 'assets/assets/build/src/style/libs.scss',
+        js: 'assets/src/js/libs/*.js',
+        style: 'assets/src/style/libs.scss',
     },
-    clean: './assets/assets/build/build/*'
+    clean: './assets/build/*'
 };
 
-/* настройки сервера */
 var config = {
     server: {
-        baseDir: './assets/assets/build/build'
+        baseDir: './assets/build'
     },
     notify: false
 };
 
-/* подключаем gulp и плагины */
-var gulp = require('gulp'),  // подключаем Gulp
-    webserver = require('browser-sync'), // сервер для работы и автоматического обновления страниц
-    plumber = require('gulp-plumber'), // модуль для отслеживания ошибок
+
+var gulp = require('gulp'),
+    webserver = require('browser-sync'),
+    plumber = require('gulp-plumber'),
     concat =        require('gulp-concat'),
-    rigger = require('gulp-rigger'), // модуль для импорта содержимого одного файла в другой
-    sourcemaps = require('gulp-sourcemaps'), // модуль для генерации карты исходных файлов
-    sass = require('gulp-sass'), // модуль для компиляции SASS (SCSS) в CSS
-    autoprefixer = require('gulp-autoprefixer'), // модуль для автоматической установки автопрефиксов
-    cleanCSS = require('gulp-clean-css'), // плагин для минимизации CSS
-    uglify = require('gulp-uglify'), // модуль для минимизации JavaScript
-    cache = require('gulp-cache'), // модуль для кэширования
-    imagemin = require('gulp-imagemin'), // плагин для сжатия PNG, JPEG, GIF и SVG изображений
-    jpegrecompress = require('imagemin-jpeg-recompress'), // плагин для сжатия jpeg 
-    pngquant = require('imagemin-pngquant'), // плагин для сжатия png
-    del = require('del'), // плагин для удаления файлов и каталогов
+    rigger = require('gulp-rigger'),
+    sourcemaps = require('gulp-sourcemaps'),
+    sass = require('gulp-sass'),
+    autoprefixer = require('gulp-autoprefixer'),
+    cleanCSS = require('gulp-clean-css'),
+    uglify = require('gulp-uglify'),
+    cache = require('gulp-cache'),
+    imagemin = require('gulp-imagemin'),
+    jpegrecompress = require('imagemin-jpeg-recompress'),  
+    pngquant = require('imagemin-pngquant'), 
+    del = require('del'),
     rename = require('gulp-rename');
 
-/* задачи */
 
-// запуск сервера
 gulp.task('webserver', function () {
     webserver(config);
 });
 
-// сбор html
 gulp.task('html:build', function () {
-    return gulp.src(path.src.html) // выбор всех html файлов по указанному пути
-        .pipe(plumber()) // отслеживание ошибок
-        .pipe(rigger()) // импорт вложений
-        .pipe(gulp.dest(path.build.html)) // выкладывание готовых файлов
-        .pipe(webserver.reload({ stream: true })); // перезагрузка сервера
+    return gulp.src(path.src.html)
+        .pipe(plumber()) 
+        .pipe(rigger())
+        .pipe(gulp.dest(path.build.html)) 
+        .pipe(webserver.reload({ stream: true }));
 });
 
-// сбор стилей
 gulp.task('css:build', function () {
-    return gulp.src(path.src.style) // получим main.scss
-        .pipe(plumber()) // для отслеживания ошибок
-        .pipe(sourcemaps.init()) // инициализируем sourcemap
-        .pipe(sass()) // scss -> css
-        .pipe(autoprefixer()) // добавим префиксы
+    return gulp.src(path.src.style)
+        .pipe(plumber())
+        .pipe(sourcemaps.init())
+        .pipe(sass())
+        .pipe(autoprefixer())
         .pipe(gulp.dest(path.build.css))
-        //.pipe(rename({ suffix: '.min' }))
-        .pipe(cleanCSS()) // минимизируем CSS
-        .pipe(sourcemaps.write('./')) // записываем sourcemap
-        .pipe(gulp.dest(path.build.css)) // выгружаем в build
-        .pipe(webserver.reload({ stream: true })); // перезагрузим сервер
+        .pipe(cleanCSS())
+        .pipe(sourcemaps.write('./'))
+        .pipe(gulp.dest(path.build.css))
+        .pipe(webserver.reload({ stream: true }));
 });
 gulp.task('css_libs:build', function () {
-    return gulp.src(path.libs.style) // получим main.scss
-        .pipe(plumber()) // для отслеживания ошибок
-        //.pipe(sourcemaps.init()) // инициализируем sourcemap
-        .pipe(sass()) // scss -> css
-        .pipe(autoprefixer()) // добавим префиксы
-        //.pipe(gulp.dest(path.build.css))
+    return gulp.src(path.libs.style)
+        .pipe(plumber())
+        .pipe(sass())
+        .pipe(autoprefixer())
         .pipe(rename({ suffix: '.min' }))
-        .pipe(cleanCSS()) // минимизируем CSS
-        //.pipe(sourcemaps.write('./')) // записываем sourcemap
-        .pipe(gulp.dest(path.build.css)) // выгружаем в build
-        .pipe(webserver.reload({ stream: true })); // перезагрузим сервер
+        .pipe(cleanCSS())
+        .pipe(gulp.dest(path.build.css))
+        .pipe(webserver.reload({ stream: true }));
 });
 
 //favicon
@@ -114,51 +107,40 @@ gulp.task('favicon:build', function() {
 gulp.task('js:build', function () {
     return gulp.src([
             path.src.js,
-<<<<<<< Updated upstream
             'assets/src/js/pages.js',
             'assets/src/js/maps.js',
-=======
-            'assets/assets/build/src/js/pages.js',
->>>>>>> Stashed changes
-        ]) // получим файл interface.js
-        .pipe(plumber()) // для отслеживания ошибок
-        .pipe(rigger()) // импортируем все указанные файлы в interface.js
+        ])
+        .pipe(plumber())
+        .pipe(rigger()) 
         .pipe(gulp.dest(path.build.js))
-        //.pipe(rename({ suffix: '.min' }))
-        //.pipe(sourcemaps.init()) //инициализируем sourcemap
-        //.pipe(uglify()) // минимизируем js
-        //.pipe(sourcemaps.write('./')) //  записываем sourcemap
-        .pipe(gulp.dest(path.build.js)) // положим готовый файл
-        .pipe(webserver.reload({ stream: true })); // перезагрузим сервер
+        .pipe(gulp.dest(path.build.js))
+        .pipe(webserver.reload({ stream: true }));
 });
 
-// сбор libs_js
+//libs_js
 gulp.task('libs:build', function () {
     return gulp.src([
-            'assets/assets/build/src/js/jquery/jquery.js',
+            'assets/src/js/jquery/jquery.js',
             path.libs.js
-        ]) // файлы libs
-        .pipe(plumber()) // для отслеживания ошибок
-        .pipe(concat('libs.js')) //concat
-
-        //.pipe(sourcemaps.init()) //инициализируем sourcemap
-        .pipe(uglify()) // минимизируем js
+        ])
+        .pipe(plumber())
+        .pipe(concat('libs.js'))
+        .pipe(uglify())
         .pipe(rename({ suffix: '.min' }))
-        //.pipe(sourcemaps.write('./')) //  записываем sourcemap
-        .pipe(gulp.dest(path.build.js_libs)) // положим готовый файл
-        .pipe(webserver.reload({ stream: true })); // перезагрузим сервер
+        .pipe(gulp.dest(path.build.js_libs))
+        .pipe(webserver.reload({ stream: true }));
 });
 
-// перенос шрифтов
+
 gulp.task('fonts:build', function () {
     return gulp.src(path.src.fonts)
         .pipe(gulp.dest(path.build.fonts));
 });
 
-// обработка картинок
+
 gulp.task('image:build', function () {
-    return gulp.src(path.src.img) // путь с исходниками картинок
-        .pipe(cache(imagemin([ // сжатие изображений
+    return gulp.src(path.src.img)
+        .pipe(cache(imagemin([
             imagemin.gifsicle({ interlaced: true }),
             jpegrecompress({
                 progressive: true,
@@ -168,20 +150,20 @@ gulp.task('image:build', function () {
             pngquant(),
             imagemin.svgo({ plugins: [{ removeViewBox: false }] })
         ])))
-        .pipe(gulp.dest(path.build.img)); // выгрузка готовых файлов
+        .pipe(gulp.dest(path.build.img));
 });
 
-// удаление каталога build 
+
 gulp.task('clean:build', function () {
     return del(path.clean);
 });
 
-// очистка кэша
+
 gulp.task('cache:clear', function () {
     cache.clearAll();
 });
 
-// сборка
+
 gulp.task('build',
     gulp.series('clean:build',
         gulp.parallel(
@@ -197,7 +179,7 @@ gulp.task('build',
     )
 );
 
-// запуск задач при изменении файлов
+
 gulp.task('watch', function () {
     gulp.watch(path.watch.html, gulp.series('html:build'));//+++
     gulp.watch(path.watch.css, gulp.series('css_libs:build'));
@@ -209,7 +191,7 @@ gulp.task('watch', function () {
     gulp.watch(path.watch.favicon, gulp.series('favicon:build'));
 });
 
-// задача по умолчанию
+
 gulp.task('default', gulp.series(
     'build',
     gulp.parallel('webserver','watch')      
