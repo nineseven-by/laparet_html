@@ -13,6 +13,12 @@
             .events__info{
                 width: 50%;
             }
+            .events__img{
+                padding: 0;
+                img{
+                    position: relative;
+                }
+            }
         }
     }
     &__in{
@@ -37,6 +43,7 @@
     &__img{
         margin-bottom: 21px;
         position: relative;
+        padding-top: 75%; 
         &:last-child{
             margin-bottom: 0;
         }
@@ -55,7 +62,11 @@
         img{
             display: block;
             max-width: 100%;
-            position: relative;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
             z-index: 1;
         }
     }
