@@ -398,7 +398,7 @@ $(document).ready(function() {
 	$("body").on("click", ".js-format-toggle__link", function(e){
         e.preventDefault();
         $(this).parents('.format-toggle').toggleClass('active');
-		$(this).hide();
+		
 	});
 
 
@@ -406,6 +406,7 @@ $(document).ready(function() {
 	$("body").on("click", ".js-checkbox-more", function(e){
         e.preventDefault();
         $(this).parents('.page-aside__select').find('.checkbox-item').removeClass('m-hidden');
+		$(this).hide();
 	});
 });
 
