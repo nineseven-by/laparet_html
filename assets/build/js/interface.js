@@ -393,20 +393,40 @@ $(document).ready(function() {
 				});
 			})
 		});
+	};
+
+	if($('.page-aside__list').length>0){
+		const filters = document.querySelectorAll('input[type="checkbox"]');
+		let filtersArray = [];
+		let appliedFilters = [];
+		filters.forEach(function(filter){
+			filtersArray.push({ id: filter.name.split('|')[0], value: filter.value, count: 0});
+			if(filter.checked){
+				appliedFilters.push({ id: filter.name.split('|')[0], value: filter.value, count: 0});
+			}
+		});
+		filters.forEach(function(filter){
+			filter.addEventListener('click', () => {
+				if(filter.checked){
+					appliedFilters.push({ id: filter.name.split('|')[0], value: filter.value, count: 0});
+				}else{
+					appliedFilters.splice(appliedFilters.indexOf({ id: filter.name.split('|')[0], value: filter.value, count: 0}), 1);
+				}
+				
+				filterCount(filtersArray, categoryId, appliedFilters, filters);
+			});
+		});
+		filterCount(filtersArray, categoryId, appliedFilters, filters);
 	}
 
-	$("body").on("click", ".js-format-toggle__link", function(e){
-        e.preventDefault();
-        $(this).parents('.format-toggle').toggleClass('active');
-		$(this).hide();
-	});
+	$(".accept-cookies").on("click", function() {
+        setCookie("cookies_accepted", "true", 180);
+        $(".cookies").hide();
+    });
 
-
-	//CHECKBOX-MORE
-	$("body").on("click", ".js-checkbox-more", function(e){
-        e.preventDefault();
-        $(this).parents('.page-aside__select').find('.checkbox-item').removeClass('m-hidden');
-	});
+    $(".reject-cookies").on("click", function() {
+        $(".cookies").hide();
+    });
 });
 
 
@@ -421,3 +441,54 @@ $(function() {
 		//}
 	});
 });
+
+function filterCount(filtersArray, categoryId, appliedFilters, filters){
+	$.ajax({
+		type: 'POST',
+		url: '/filter-count',
+		data: {
+			appliedFilters: appliedFilters,
+			filters: filtersArray,
+			categoryId: categoryId,			
+		},
+		success: function(response) {
+			let counters = document.querySelectorAll('.filter-count');
+			counters.forEach((counter, index) => {
+				if(response.filters[index].count && response.filters[index].count != 0){
+					counter.innerHTML = response.filters[index].count;
+					filters[index].disabled = false;
+				}else{
+					counter.innerHTML = "";
+					filters[index].disabled = true;
+				}
+			});
+		},
+		error: function(xhr, status, error) {
+			console.log(error);
+		}
+	});
+	$.ajax({
+		type: 'POST',
+		url: '/filter-count-apply',
+		data: {
+			appliedFilters: appliedFilters,
+			categoryId: categoryId,			
+		},
+		success: function(response) {
+			let buttonSup = document.querySelector('#applyFilters');
+			buttonSup.innerHTML = response.count;
+		},
+		error: function(xhr, status, error) {
+			console.log(error);
+		}
+	});
+}
+function setCookie(name, value, days) {
+	let expires = "";
+	if (days) {
+	  let date = new Date();
+	  date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+	  expires = "; expires=" + date.toUTCString();
+	}
+	document.cookie = name + "=" + (value || "") + expires + "; path=/; SameSite=None; Secure";
+  }
