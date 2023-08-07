@@ -393,13 +393,42 @@ $(document).ready(function() {
 				});
 			})
 		});
+	};
+
+	// $("body").on("click", ".js-format-toggle__link", function(e){
+    //     e.preventDefault();
+    //     $(this).parents('.format-toggle').toggleClass('active');
+		
+	// });
+	if($('.page-aside__list').length>0){
+		const filters = document.querySelectorAll('input[type="checkbox"]');
+		let filtersArray = [];
+		let appliedFilters = [];
+		filters.forEach(function(filter){
+			filtersArray.push({ id: filter.name.split('|')[0], value: filter.value, count: 0});
+			if(filter.checked){
+				appliedFilters.push({ id: filter.name.split('|')[0], value: filter.value, count: 0});
+			}
+		});
+		filters.forEach(function(filter){
+			filter.addEventListener('click', () => {
+				if(filter.checked){
+					appliedFilters.push({ id: filter.name.split('|')[0], value: filter.value, count: 0});
+				}else{
+					appliedFilters.splice(appliedFilters.indexOf({ id: filter.name.split('|')[0], value: filter.value, count: 0}), 1);
+				}
+				
+				filterCount(filtersArray, categoryId, appliedFilters, filters);
+			});
+		});
+		filterCount(filtersArray, categoryId, appliedFilters, filters);
 	}
 
-	$("body").on("click", ".js-format-toggle__link", function(e){
-        e.preventDefault();
-        $(this).parents('.format-toggle').toggleClass('active');
-		
-	});
+	$(".accept-cookies").on("click", function() {
+        setCookie("cookies_accepted", "true", 180);
+        $(".cookies").hide();
+    });
+
 
 
 	//CHECKBOX-MORE

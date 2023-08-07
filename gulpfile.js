@@ -9,7 +9,6 @@ var path = {
         img: 'assets/build/img/',
         favicon: 'assets/build/favicon/',
         fonts: 'assets/build/fonts/'
-
     },
     src: {
         html: 'assets/src/*.html',
@@ -18,7 +17,6 @@ var path = {
         img: 'assets/src/img/**/*.*',
         favicon: 'assets/src/favicon/**/*.*',
         fonts: 'assets/src/fonts/**/*.*'
-
     },
     watch: {
         html: 'assets/src/**/*.html',
@@ -27,13 +25,12 @@ var path = {
         img: 'assets/src/img/**/*.*',
         favicon: 'assets/src/favicon/**/*.*',
         fonts: 'assets/srs/fonts/**/*.*'
-
     },
     libs: {
         js: 'assets/src/js/libs/*.js',
         style: 'assets/src/style/libs.scss',
     },
-    clean: './assets/build/*'
+    clean: 'assets/build/*'
 };
 
 var config = {
@@ -108,10 +105,9 @@ gulp.task('js:build', function () {
     return gulp.src([
             path.src.js,
             'assets/src/js/pages.js',
-            'assets/src/js/maps.js',
         ])
         .pipe(plumber())
-        .pipe(rigger()) 
+        .pipe(rigger())
         .pipe(gulp.dest(path.build.js))
         .pipe(gulp.dest(path.build.js))
         .pipe(webserver.reload({ stream: true }));
