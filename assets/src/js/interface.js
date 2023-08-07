@@ -399,6 +399,13 @@ $(document).ready(function() {
         e.preventDefault();
         $(this).parents('.format-toggle').toggleClass('active');
 	});
+
+
+	//CHECKBOX-MORE
+	$("body").on("click", ".js-checkbox-more", function(e){
+        e.preventDefault();
+        $(this).parents('.page-aside__select').find('.checkbox-item').removeClass('m-hidden');
+	});
 });
 
 
