@@ -274,6 +274,12 @@
 		/* icon size, then gradient */
 		//background-size: .65em auto, 100%;
 	}
+
+
+	input[type="checkbox"]:disabled + label{
+		opacity: 0.4;
+		pointer-events: none;
+	}
 }
 
 
