@@ -398,6 +398,7 @@ $(document).ready(function() {
 	$("body").on("click", ".js-format-toggle__link", function(e){
         e.preventDefault();
         $(this).parents('.format-toggle').toggleClass('active');
+		$(this).hide();
 	});
 
 
