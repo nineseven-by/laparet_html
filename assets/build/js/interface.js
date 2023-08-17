@@ -210,7 +210,7 @@ $(document).ready(function() {
 			speed: 300,
 			slidesToShow: 3,
 			//slidesToScroll: 1,
-			variableWidth: true,
+			// variableWidth: true,
 			responsive: [
 			  	{
 					breakpoint: 767,
