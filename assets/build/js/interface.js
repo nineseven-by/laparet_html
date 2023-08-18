@@ -302,37 +302,42 @@ $(document).ready(function() {
 		})
 
 
-		var tl1 = gsap.timeline({
-			// duration: -5,
-			scrollTrigger: {
-				trigger: ".inspiration",
-			  	start: "top top",
-			  	// end: () => `+=${document.querySelector(".inspiration").offsetHeight}`,
-				// end: '400% top',
-				end: 'bottom',
-			  	pin: true,
-    			scrub: 3,
+		// var line_length = $('.inspiration__line').length;
+		// console.log(line_length);
+		// if(line_length>=3){
+			var tl1 = gsap.timeline({
+				// duration: -5,
+				scrollTrigger: {
+					trigger: ".inspiration",
+					  start: "top top",
+					  // end: () => `+=${document.querySelector(".inspiration").offsetHeight}`,
+					// end: '400% top',
+					end: 'bottom',
+					  pin: true,
+					scrub: 3,
+		
+					anticipatePin: 0,
+				}
+			});
 	
-				anticipatePin: 0,
-			}
-		});
-
-		tl1.to(".inspiration__wrap", {
-			// x: '-=100',
-			//yPercent: -100,
-			// y: () => `-=${document.querySelector(".inspiration__wrap").offsetHeight}`,
-			y: '-=600',
-			xPercent: -55,
-			ease: "none",
-			duration: 1000,
-	
-		});
-		tl1.from(".inspiration .see-all-link", {
-			y:50,
-			opacity: 0,
-			ease: "easeIn",
-			duration: 10
-		})
+			tl1.to(".inspiration__wrap", {
+				// x: '-=100',
+				//yPercent: -100,
+				// y: () => `-=${document.querySelector(".inspiration__wrap").offsetHeight}`,
+				y: '-=600',
+				xPercent: -55,
+				ease: "none",
+				duration: 1000,
+		
+			});
+			tl1.from(".inspiration .see-all-link", {
+				y:50,
+				opacity: 0,
+				ease: "easeIn",
+				duration: 10
+			})
+		// }
+		
 
 	}
 

@@ -732,6 +732,7 @@ a.collection__top{
 
 .btn-wrap{
 	text-align: center;
+	min-width: 100%;
 }
 .btn{
 	display: inline-block;
@@ -745,6 +746,7 @@ a.collection__top{
 	min-width: 244px;
 	text-align: center;
 	padding: 15px 10px;
+	background: transparent;
 	&:hover{
 		color: $alt-color;
 		border: 1px solid $alt-color;
