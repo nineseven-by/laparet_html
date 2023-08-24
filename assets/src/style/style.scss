@@ -231,6 +231,11 @@ ymaps[class$="-copyright"] {
 			background: url(../img/svg/br-arrow.svg) center/cover no-repeat;
 			margin: 0 8px;
 		}
+		&:last-child{
+			&:after{
+				display: none;
+			}
+		}
 	}
 }
 
