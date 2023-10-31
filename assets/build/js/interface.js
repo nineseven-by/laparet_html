@@ -152,7 +152,7 @@ $(document).ready(function() {
 			asNavFor: '.item-collection-nav'
 		});
 		$('.item-collection-nav').slick({
-			slidesToShow: 6,
+			slidesToShow: 4,
 			slidesToScroll: 1,
 			asNavFor: '.item-collection-for',
 			dots: false,
@@ -163,12 +163,12 @@ $(document).ready(function() {
 				{
 					breakpoint: 1100,
 					settings: {
-						slidesToShow: 5,
+						slidesToShow: 3,
 						slidesToScroll: 1,
 					}
 				},
 				{
-					breakpoint: 950,
+					breakpoint: 850,
 					settings: {
 						slidesToShow: 4,
 						slidesToScroll: 1,
