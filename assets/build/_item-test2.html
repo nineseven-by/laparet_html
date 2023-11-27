@@ -256,46 +256,22 @@
                         <div class="container">
                             <div class="item-collection__wrap">
                                 <div class="item-collection__view">
-                                    <div class="main-collections-view__label">
-                                        NEW
-                                    </div>
+									{% set offer = product.offer.first() %}
+                                            {% if offer.property.getByCode('Novinka').property_value.getValueString() == 1%}
+											<div class="main-collections-view__label">
+												NEW
+											</div>
+                                            {% endif %}
                                     <div class="item-collection-for">
-                                        
+                                        {% for image in product.images %}
                                         <div class="item-collection-for__item">
 											<div class="item-collection-for__inner">
 												<div class="item-collection-for__img">
-													<img src="https://laparet.n3.by/storage/app/uploads/public/652/1ec/6cb/6521ec6cbf20c387454477700x550.webp" alt="">
+													<img src="{{ image.path }}" alt="">
 												</div>
 											</div>
                                         </div>
-                                        <div class="item-collection-for__item">
-											<div class="item-collection-for__inner">
-												<div class="item-collection-for__img">
-													<img src="https://laparet.n3.by/storage/app/uploads/public/652/1ec/6cc/6521ec6cc87ec779112096700x550.webp" alt="">
-												</div>
-											</div>
-                                        </div>
-                                        <div class="item-collection-for__item">
-											<div class="item-collection-for__inner">
-												<div class="item-collection-for__img">
-													<img src="https://laparet.n3.by/storage/app/uploads/public/652/1ec/6dc/6521ec6dc75ea533148436700x550.webp" alt="">
-												</div>
-											</div>
-                                        </div>
-                                        <div class="item-collection-for__item">
-											<div class="item-collection-for__inner">
-												<div class="item-collection-for__img">
-													<img src="https://laparet.n3.by/storage/app/uploads/public/652/1ec/6e2/6521ec6e29063245067039700x550.webp" alt="">
-												</div>
-											</div>
-                                        </div>
-                                        <div class="item-collection-for__item">
-											<div class="item-collection-for__inner">
-												<div class="item-collection-for__img">
-													<img src="https://laparet.n3.by/storage/app/uploads/public/655/3aa/3b3/6553aa3b35637009577273700x550.webp" alt="">
-												</div>
-											</div>
-                                        </div>
+										{% endfor %}
                                     </div>
                                     <!-- <div class="item-collection__title">Products</div> -->
 
@@ -313,7 +289,7 @@
                                                     </div>
                                                     <div class="item-top-nav-info-format__half">
                                                         <span>
-                                                            13
+                                                            {{offers.count()}}
                                                         </span>
                                                     </div>
                                                 </div>
@@ -321,44 +297,18 @@
                                             </div>
                                         </div>
                                     </div>
-									<div class="item-collection-nav">
+									<div class="item-collection-nav" {% if product.images.count() < 2 %}style="opacity: 0;"{% endif %}>
+										{% for image in product.images %}
                                         <div class="item-collection-nav__item">
 											<div class="item-collection-for__inner">
 												<div class="item-collection-nav__img">
-													<img src="https://laparet.n3.by/storage/app/uploads/public/652/1ec/6cb/6521ec6cbf20c387454477110x100.webp" alt="">
+													<img src="{{ image.path }}" alt="">
 												</div>
 											</div>
                                         </div>
-                                        <div class="item-collection-nav__item">
-											<div class="item-collection-for__inner">
-												<div class="item-collection-nav__img">
-													<img src="https://laparet.n3.by/storage/app/uploads/public/652/1ec/6cc/6521ec6cc87ec779112096110x100.webp" alt="">
-												</div>
-											</div>
-                                        </div>
-                                        <div class="item-collection-nav__item">
-											<div class="item-collection-for__inner">
-												<div class="item-collection-nav__img">
-													<img src="https://laparet.n3.by/storage/app/uploads/public/652/1ec/6dc/6521ec6dc75ea533148436110x100.webp" alt="">
-												</div>
-											</div>
-                                        </div>
-                                        <div class="item-collection-nav__item">
-											<div class="item-collection-for__inner">
-												<div class="item-collection-nav__img">
-													<img src="https://laparet.n3.by/storage/app/uploads/public/652/1ec/6e2/6521ec6e29063245067039110x100.webp" alt="">
-												</div>
-											</div>
-                                        </div>
-                                        <div class="item-collection-nav__item">
-											<div class="item-collection-for__inner">
-												<div class="item-collection-nav__img">
-													<img src="https://laparet.n3.by/storage/app/uploads/public/655/3aa/3b3/6553aa3b35637009577273110x100.webp" alt="">
-												</div>
-											</div>
-                                        </div>
+										{% endfor %}
                                     </div>
-                                    <a href="#" class="item-top__back">Back</a>
+                                    <a href="javascript:history.back()" class="item-top__back">Back</a>
                                 </div>
                             </div>
                         </div>
@@ -367,43 +317,38 @@
                         <div class="container">
                             <h2>Products</h2>
                             <div class="products__list">
+								{% set offers = product.offer %}
+								{% for offer in offers %}
                                 <div class="used__item">
-                                    <a href="#" class="used__in">
-                                        <div class="main-collections-view__label">
-                                            NEW
-                                        </div>
+                                    <a href="{{ product.getPageUrl('products/porcelain-gres/item2')|replace({"default": offer.code}) }}" class="used__in">
+										{% if offer.property.getByCode('Novinka').property_value.getValueString() == 1%}
+											<div class="main-collections-view__label">
+												NEW
+											</div>
+										{% endif %}
+                                        
                                         <div class="used__icon">
                                             <div class="used__inner">
-                                                <img src="img/content/pr1.jpg" alt="">
+                                                <img src="{% if offer.preview_image.path %}
+                                                {{offer.preview_image.path}}
+                                                {% else %}
+                                                {{'https://laparet.n3.by/storage/app/media/emptyOffer.jpg'}}
+                                                {% endif %}" alt="">
                                             </div>
                                         </div>
                                         <div class="used__info">
                                             <div class="used__size">
-                                                60×120 || 24×48
+												{{ offer.property.getByCode('LengthCM').property_value.getValueString() }}x{{ offer.property.getByCode('WidthCM').property_value.getValueString() }}
+												|| 
+												{{ offer.property.getByCode('LengthIn').property_value.getValueString() }}x{{ offer.property.getByCode('WidthIn').property_value.getValueString() }}
                                             </div>
                                             <div class="used__txt">
-                                                Elegant armani gold, porcelain stoneware, polished
+                                                {{ offer.name }}
                                             </div>
                                         </div>
                                     </a>
                                 </div>
-                                <div class="used__item">
-                                    <a href="#" class="used__in">
-                                        <div class="used__icon">
-                                            <div class="used__inner">
-                                                <img src="img/content/pr2.jpg" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="used__info">
-                                            <div class="used__size">
-                                                60×120 || 24×48
-                                            </div>
-                                            <div class="used__txt">
-                                                Elegant armani gold, porcelain stoneware, polished
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
+								{% endfor %}
                             </div>
                         </div>
                     </div>
@@ -411,46 +356,26 @@
                         <div class="container">
                             <h2>other collections</h2>
                             <div class="other__list">
+								{% set otherCollectionsIDs = product.property.getByCode('Other Collections').property_value.getValueString()|split(", ") %}
+								{% set obProductList = getCollectionById(otherCollectionsIDs)%}
+								{% for relatedProduct in obProductList %}
+								{% if relatedProduct.name != product.name  %}
                                 <div class="other__item">
-                                    <a href="#" class="other__in">
+                                    <a href="{{ '/products/' ~ relatedProduct.category.slug ~ '/' ~ relatedProduct.slug   }}" class="other__in">
                                         <div class="other__img">
-                                            <img src="img/content/gallery3.jpg" alt="">
-                                            <div class="other__label">NEW</div>
+											<img src="{% if relatedProduct.preview_image.path %}
+											{{relatedProduct.preview_image.path}}
+											{% else %}
+											{{'https://laparet.n3.by/storage/app/media/emptyOffer.jpg'}}
+											{% endif %}" alt="">
+                                            {% for offer in relatedProduct.offer %}
+                                            {% if offer.property.getByCode('Novinka').property_value.getValueString() == 1%}
+                                                <div class="other__label">NEW</div>
+                                            {% endif %}
+                                        	{% endfor %}
                                         </div>
                                         <div class="other__title">
-                                            Xtreme Nero
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="other__item">
-                                    <a href="#" class="other__in">
-                                        <div class="other__img">
-                                            <img src="img/content/gallery1.jpg" alt="">
-                                           
-                                        </div>
-                                        <div class="other__title">
-                                            Xtreme Nero
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="other__item">
-                                    <a href="#" class="other__in">
-                                        <div class="other__img">
-                                            <img src="img/content/gallery2.jpg" alt="">
-                                        </div>
-                                        <div class="other__title">
-                                            Xtreme Nero
-                                        </div>
-                                    </a>
-                                </div>
-                                
-                                <div class="other__item">
-                                    <a href="#" class="other__in">
-                                        <div class="other__img">
-                                            <img src="img/content/gallery4.jpg" alt="">
-                                        </div>
-                                        <div class="other__title">
-                                            Xtreme Nero
+                                            {{relatedProduct.name}}
                                         </div>
                                     </a>
                                 </div>
@@ -462,31 +387,18 @@
                         <div class="container">
                             <h2>Inspiration</h2>
                             <div class="inspiration-slider">
+								{% set posts = galleries.posts %}
+								{% set myItems = [] %}
+								{% for post in posts %}
+									{% set myItems = myItems|merge(post.images) %}
+								{% endfor %}
+								{% for image in myItems|slice(0, 20) %}
                                 <div class="inspiration-slider__item">
 									<a href="img/content/insp1.jpg" class="inspiration-slider__img" data-fancybox="gallery34">
-										<img src="img/content/insp1.jpg" alt="">
+										<img src="{{ image.path }}" alt="">
 									</a>
                                 </div>
-                                <div class="inspiration-slider__item">
-									<a href="img/content/insp2.jpg" class="inspiration-slider__img" data-fancybox="gallery34">
-										<img src="img/content/insp2.jpg" alt="">
-									</a>
-                                </div>
-                                <div class="inspiration-slider__item">
-									<a href="img/content/insp3.jpg" class="inspiration-slider__img" data-fancybox="gallery34">
-                                    	<img src="img/content/insp3.jpg" alt="">
-									</a>
-                                </div>
-                                <div class="inspiration-slider__item">
-									<a href="img/content/insp2.jpg" class="inspiration-slider__img" data-fancybox="gallery34">
-                                    	<img src="img/content/insp2.jpg" alt="">
-									</a>
-                                </div>
-                                <div class="inspiration-slider__item">
-									<a href="img/content/insp3.jpg" class="inspiration-slider__img" data-fancybox="gallery34">
-                                    	<img src="img/content/insp3.jpg" alt="">
-									</a>
-                                </div>
+								{% endfor %}
                             </div>
                         </div>
                     </div>
@@ -496,99 +408,3 @@
            
 		</main>
 	</div><!-- END LAYOUT-->
-	<footer class="page-footer">
-		<div class="container">
-			<div class="page-footer__wrap">
-				<div class="page-footer-menu">
-					<div class="page-footer-menu__wrap">
-						<div class="page-footer-menu__item">
-							<a href="#" class="page-footer-menu__top">
-								Collections
-							</a>
-						</div>
-						<div class="page-footer-menu__item">
-							<div class="page-footer-menu__top">
-								Style studio
-							</div>
-							<a href="#" class="page-footer-menu__link">
-								The Design Box
-							</a>
-							<a href="#" class="page-footer-menu__link">
-								Trend hub
-							</a>
-							<a href="#" class="page-footer-menu__link">
-								Visualizers
-							</a>
-						</div>
-						<div class="page-footer-menu__item">
-							<div class="page-footer-menu__top">
-								Trade pros
-							</div>
-							<a href="#" class="page-footer-menu__link">
-								Resources
-							</a>
-							<a href="#" class="page-footer-menu__link">
-								Architect & Designer
-							</a>
-							<a href="#" class="page-footer-menu__link">
-								Dealer
-							</a>
-							<a href="#" class="page-footer-menu__link">
-								Builder / Contractor
-							</a>
-						</div>
-						<div class="page-footer-menu__item">
-							<div class="page-footer-menu__top">
-								About Us
-							</div>
-							<a href="#" class="page-footer-menu__link">
-								Company Information
-							</a>
-							<a href="#" class="page-footer-menu__link">
-								Careers	
-							</a>
-							<a href="#" class="page-footer-menu__link">
-								Locations
-							</a>
-							<a href="#" class="page-footer-menu__link">
-								Contact Us	
-							</a>
-							<a href="#" class="page-footer-menu__link">
-								Events	
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="page-footer-contact">
-					<div class="page-footer-menu__top">
-						Contact Us
-					</div>
-					<div class="socials">
-						<a href="#" class="socials__link m-insta"></a>
-						<a href="#" class="socials__link m-linked"></a>
-						<a href="#" class="socials__link m-fb"></a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="bottom">
-			<div class="container">
-				<div class="bottom__wrap">
-					&copy; 2023 Laparet
-	
-					<a href="#" class="bottom__policy">
-						Privacy Policy
-					</a>
-					<div class="develop">
-						Development: <a href="https://nineseven.ru/" class="develop__link"></a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
-
-	<script src="js/libs/libs.min.js"></script>
-	<script src="js/interface.js"></script>
-	<script src="js/pages.js"></script>
-</body>
-</html>

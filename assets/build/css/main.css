@@ -5234,3 +5234,9 @@ a.page-footer-menu__top:hover {
 .item-collection.m-detail .item-collection-for__inner {
     padding-top: 83%;
 }
+
+.item-collection.m-detail .item-collection-nav__img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
