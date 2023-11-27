@@ -2,8 +2,7 @@
 
 async function initMap1() {
   	const { Map } = await google.maps.importLibrary("maps");
-
-	var myCenter1 = new google.maps.LatLng(51.528308, -0.3817765);
+	var myCenter1 = new google.maps.LatLng(map1lat, map1lng);
 
   	map = new Map(document.getElementById("map1"), {
 		center: myCenter1,
@@ -21,7 +20,7 @@ async function initMap1() {
 async function initMap2() {
 	const { Map } = await google.maps.importLibrary("maps");
 
-  	var myCenter2 = new google.maps.LatLng(52.528308, -0.3717765);
+  	var myCenter2 = new google.maps.LatLng(map2lat, map2lng);
 
 	map2 = new Map(document.getElementById("map2"), {
 	  center: myCenter2,
@@ -39,7 +38,7 @@ async function initMap2() {
 async function initMap3() {
 	const { Map } = await google.maps.importLibrary("maps");
 
-  	var myCenter3 = new google.maps.LatLng(60.26025464, 50.66345215);
+  	var myCenter3 = new google.maps.LatLng(map3lat, map3lng);
 
 	map3 = new Map(document.getElementById("map3"), {
 	  center: myCenter3,
@@ -56,7 +55,7 @@ async function initMap3() {
 async function initMap4() {
 	const { Map } = await google.maps.importLibrary("maps");
 
-  	var myCenter4 = new google.maps.LatLng(57.15170932, 65.55109888);
+  	var myCenter4 = new google.maps.LatLng(map4lat, map4lng);
 
 	map4 = new Map(document.getElementById("map4"), {
 	  center: myCenter4,
@@ -73,7 +72,7 @@ async function initMap4() {
 async function initMap5() {
 	const { Map } = await google.maps.importLibrary("maps");
 
-  	var myCenter5 = new google.maps.LatLng(23.44304956, 46.47339106);
+  	var myCenter5 = new google.maps.LatLng(map5lat, map5lng);
 
 	map5 = new Map(document.getElementById("map5"), {
 	  center: myCenter5,
@@ -90,7 +89,7 @@ async function initMap5() {
 async function initMap6() {
 	const { Map } = await google.maps.importLibrary("maps");
 
-  	var myCenter6 = new google.maps.LatLng(23.15547331, 43.36975336);
+  	var myCenter6 = new google.maps.LatLng(map6lat, map6lng);
 
 	map6 = new Map(document.getElementById("map6"), {
 	  center: myCenter6,
