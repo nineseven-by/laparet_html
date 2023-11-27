@@ -5226,3 +5226,11 @@ a.page-footer-menu__top:hover {
     height: 100%;
     object-fit: cover;
 }
+
+.item-collection.m-detail .item-collection-for .slick-arrow{
+    display: none!important;
+}
+
+.item-collection.m-detail .item-collection-for__inner {
+    padding-top: 83%;
+}
