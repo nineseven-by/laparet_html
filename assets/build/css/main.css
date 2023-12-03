@@ -2063,9 +2063,9 @@ a.collection__top.active i {
     z-index: 2;
 }
 .hero-info__title {
-    font-size: 50px;
-    line-height: 65px;
-    letter-spacing: 10px;
+    font-size: 42px;
+    line-height: 56px;
+    letter-spacing: 8px;
     text-transform: uppercase;
     margin-bottom: 53px;
 }
@@ -4707,6 +4707,9 @@ a.page-footer-menu__top:hover {
     }
 }
 @media screen and (max-width: 600px) {
+    .hero-info__title {
+        letter-spacing: 5px;
+    }
     .page-header > .container {
         position: relative;
     }
