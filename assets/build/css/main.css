@@ -2577,6 +2577,12 @@ a.collection__top.active i {
     padding-left: 25px;
     position: relative;
 }
+.contact-view__address p{
+    margin: 0;
+}
+.contact-view__address a{
+    color: #3abdb5;
+}
 .contact-view__address:before {
     content: "";
     display: inline-block;
