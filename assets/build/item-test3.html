@@ -392,11 +392,32 @@
                                                     </div>
                                                     <div class="item-top-nav-info-format__half">
                                                         <span>
+                                                            60×120 || 24×48
+                                                        </span>
+                                                    </div>
+                                                </div>
+												<div class="item-top-nav-info-format__item">
+                                                    <div class="item-top-nav-info-format__half">
+                                                        <span>thickness</span>
+                                                    </div>
+                                                    <div class="item-top-nav-info-format__half">
+                                                        <span>
+                                                            0.9 cm
+                                                        </span>
+                                                    </div>
+                                                </div>
+												<div class="item-top-nav-info-format__item">
+                                                    <div class="item-top-nav-info-format__half">
+                                                        <span>faces</span>
+                                                    </div>
+                                                    <div class="item-top-nav-info-format__half">
+                                                        <span>
                                                             13
                                                         </span>
                                                     </div>
                                                 </div>
 
+												<a href="#" class="btn popup-trigger" data-popup-trigger="one">Order sample</a>
                                             </div>
                                         </div>
                                     </div>
@@ -629,6 +650,51 @@
 			</div>
 		</div>
 	</footer>
+
+	<div class="popup-modal m-form" data-popup-modal="one">
+        <i class="popup-modal__close"></i>
+        <h2>order a sample</h2>
+		<div class="page-form">
+			<form action="#" method="post">
+				<div class="page-form__item">
+					<div class="page-form__label">Name</div>
+					<input type="text" placeholder="How to contact you?">
+				</div>
+				<div class="page-form__item">
+					<div class="page-form__label">
+						E-mail
+						<span class="necc">*</span>
+					</div>
+					<input type="text" placeholder="Will be used for communication">
+				</div>
+				<div class="page-form__item">
+					<div class="page-form__label">
+						Mobile phone 
+						<span class="necc">*</span>
+					</div>
+					<input type="tel" class="phoneselect" id="phone"></input>
+					<div class="page-form-msg">Сheck the field</div>
+				</div>
+				<div class="page-form__item">
+					<div class="checkbox-item">
+						<input type="checkbox" id="checkbox-agree123" name="checkbox">
+						<label for="checkbox-agree123">
+							I agree for processing my personal data in accordance with the <a href="#">Personal Data Protection</a>
+						</label>
+					</div>
+				</div>
+				<div class="page-form__item">
+					<div class="captcha">
+						<img src="img/content/captcha.png" alt="">
+					</div>
+				</div>
+				<div class="page-form-submit-wrap">
+					<button type="submit" class="page-form__submit boujee-text">sEND</button>
+				</div>
+			</form>
+		</div>
+    </div>
+	<div class="body-blackout"></div>
 
 	<script src="js/libs/libs.min.js"></script>
 	<script src="js/interface.js"></script>

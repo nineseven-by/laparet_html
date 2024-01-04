@@ -261,11 +261,13 @@ textarea {
 }
 .page-popup,
 .popup,
+.popup-modal,
 .workarea {
     line-height: 1.8;
 }
 .page-popup h1,
 .popup h1,
+.popup-modal h1,
 .workarea h1 {
     margin: 0;
     margin-bottom: 30px;
@@ -276,6 +278,7 @@ textarea {
     letter-spacing: 10px;
 }
 .page-popup h2,
+.popup-modal h2,
 .popup h2,
 .workarea h2 {
     margin: 0;
@@ -287,6 +290,7 @@ textarea {
     letter-spacing: 10px;
 }
 .page-popup h3,
+.popup-modal h3,
 .popup h3,
 .workarea h3 {
     margin: 0;
@@ -299,6 +303,7 @@ textarea {
 }
 .page-popup h4,
 .popup h4,
+.popup-modal h4,
 .workarea h4 {
     margin: 0;
     margin-bottom: 30px;
@@ -310,6 +315,7 @@ textarea {
 }
 .page-popup h5,
 .popup h5,
+.popup-modal h5,
 .workarea h5 {
     margin: 0;
     margin-bottom: 30px;
@@ -321,6 +327,7 @@ textarea {
 }
 .page-popup h6,
 .popup h6,
+.popup-modal h6,
 .workarea h6 {
     margin: 0;
     margin-bottom: 20px;
@@ -332,6 +339,7 @@ textarea {
 }
 .page-popup p,
 .popup p,
+.popup-modal p,
 .workarea p {
     margin: 0;
     margin-bottom: 20px;
@@ -344,6 +352,10 @@ textarea {
 .popup input[type="password"],
 .popup input[type="tel"],
 .popup input[type="text"],
+.popup-modal input[type="email"],
+.popup-modal input[type="password"],
+.popup-modal input[type="tel"],
+.popup-modal input[type="text"],
 .workarea input[type="email"],
 .workarea input[type="password"],
 .workarea input[type="tel"],
@@ -365,6 +377,10 @@ textarea {
 .popup input[type="password"]:focus,
 .popup input[type="tel"]:focus,
 .popup input[type="text"]:focus,
+.popup-modal input[type="email"]:focus,
+.popup-modal input[type="password"]:focus,
+.popup-modal input[type="tel"]:focus,
+.popup-modal input[type="text"]:focus,
 .workarea input[type="email"]:focus,
 .workarea input[type="password"]:focus,
 .workarea input[type="tel"]:focus,
@@ -373,6 +389,7 @@ textarea {
 }
 .page-popup textarea,
 .popup textarea,
+.popup-modal textarea,
 .workarea textarea {
     display: block;
     width: 100%;
@@ -386,6 +403,7 @@ textarea {
 }
 .page-popup ol,
 .popup ol,
+.popup-modal ol,
 .workarea ol {
     margin: 0;
     margin-bottom: 22px;
@@ -394,6 +412,7 @@ textarea {
 }
 .page-popup ol li,
 .popup ol li,
+.popup-modal ol li,
 .workarea ol li {
     list-style-type: none;
     padding-left: 28px;
@@ -402,6 +421,7 @@ textarea {
 }
 .page-popup ol li:before,
 .popup ol li:before,
+.popup-modal ol li:before,
 .workarea ol li:before {
     counter-increment: myCounter;
     content: counter(myCounter) ".";
@@ -412,6 +432,7 @@ textarea {
 }
 .page-popup ul,
 .popup ul,
+.popup-modal ul,
 .workarea ul {
     margin: 0;
     margin-bottom: 22px;
@@ -419,6 +440,7 @@ textarea {
 }
 .page-popup ul li,
 .popup ul li,
+.popup-modal ul li,
 .workarea ul li {
     list-style-type: none;
     padding-left: 28px;
@@ -427,6 +449,7 @@ textarea {
 }
 .page-popup ul li:before,
 .popup ul li:before,
+.popup-modal ul li:before,
 .workarea ul li:before {
     content: "";
     position: absolute;
@@ -438,6 +461,7 @@ textarea {
 }
 .page-popup table,
 .popup table,
+.popup-modal table,
 .workarea table {
     width: 100%;
     min-width: 576px;
@@ -504,12 +528,14 @@ textarea {
 }
 .page-popup strong,
 .popup strong,
+.popup-modal strong,
 .workarea strong {
     font-family: suisse_intlbold;
     font-weight: 400;
 }
 .page-popup input[type="checkbox"] + label,
 .popup input[type="checkbox"] + label,
+.popup-modal input[type="checkbox"] + label,
 .workarea input[type="checkbox"] + label {
     transition: all 0.25s ease;
     color: #272726;
@@ -518,6 +544,8 @@ textarea {
 .page-popup input[type="checkbox"]:not(:checked),
 .popup input[type="checkbox"]:checked,
 .popup input[type="checkbox"]:not(:checked),
+.popup-modal input[type="checkbox"]:checked,
+.popup-modal input[type="checkbox"]:not(:checked),
 .workarea input[type="checkbox"]:checked,
 .workarea input[type="checkbox"]:not(:checked) {
     position: absolute;
@@ -527,6 +555,8 @@ textarea {
 .page-popup input[type="checkbox"]:not(:checked) + label,
 .popup input[type="checkbox"]:checked + label,
 .popup input[type="checkbox"]:not(:checked) + label,
+.popup-modal input[type="checkbox"]:checked + label,
+.popup-modal input[type="checkbox"]:not(:checked) + label,
 .workarea input[type="checkbox"]:checked + label,
 .workarea input[type="checkbox"]:not(:checked) + label {
     position: relative;
@@ -539,6 +569,8 @@ textarea {
 .page-popup input[type="checkbox"]:not(:checked) + label:before,
 .popup input[type="checkbox"]:checked + label:before,
 .popup input[type="checkbox"]:not(:checked) + label:before,
+.popup-modal input[type="checkbox"]:checked + label:before,
+.popup-modal input[type="checkbox"]:not(:checked) + label:before,
 .workarea input[type="checkbox"]:checked + label:before,
 .workarea input[type="checkbox"]:not(:checked) + label:before {
     content: "";
@@ -555,11 +587,13 @@ textarea {
 }
 .page-popup input[type="checkbox"]:not(:checked) + label:hover:before,
 .popup input[type="checkbox"]:not(:checked) + label:hover:before,
+.popup-modal input[type="checkbox"]:not(:checked) + label:hover:before,
 .workarea input[type="checkbox"]:not(:checked) + label:hover:before {
     border: 1px solid #3abdb5;
 }
 .page-popup input[type="checkbox"]:checked + label:before,
 .popup input[type="checkbox"]:checked + label:before,
+.popup-modal input[type="checkbox"]:checked + label:before,
 .workarea input[type="checkbox"]:checked + label:before {
     border: 1px solid #3abdb5;
 }
@@ -567,6 +601,8 @@ textarea {
 .page-popup input[type="checkbox"]:not(:checked) + label:after,
 .popup input[type="checkbox"]:checked + label:after,
 .popup input[type="checkbox"]:not(:checked) + label:after,
+.popup-modal input[type="checkbox"]:checked + label:after,
+.popup-modal input[type="checkbox"]:not(:checked) + label:after,
 .workarea input[type="checkbox"]:checked + label:after,
 .workarea input[type="checkbox"]:not(:checked) + label:after {
     content: "";
@@ -581,16 +617,19 @@ textarea {
 }
 .page-popup input[type="checkbox"]:not(:checked) + label:after,
 .popup input[type="checkbox"]:not(:checked) + label:after,
+.popup-modal input[type="checkbox"]:not(:checked) + label:after,
 .workarea input[type="checkbox"]:not(:checked) + label:after {
     opacity: 0;
 }
 .page-popup input[type="checkbox"]:checked + label:after,
 .popup input[type="checkbox"]:checked + label:after,
+.popup-modal input[type="checkbox"]:checked + label:after,
 .workarea input[type="checkbox"]:checked + label:after {
     opacity: 1;
 }
 .page-popup select,
 .popup select,
+.popup-modal select,
 .workarea select {
     display: block;
     width: 100%;
@@ -609,6 +648,7 @@ textarea {
 }
 .page-popup input[type="checkbox"]:disabled + label,
 .popup input[type="checkbox"]:disabled + label,
+.popup-modal input[type="checkbox"]:disabled + label,
 .workarea input[type="checkbox"]:disabled + label {
     opacity: 0.4;
     pointer-events: none;
@@ -4134,6 +4174,69 @@ a.collection__top.active i {
 a.page-footer-menu__top:hover {
     color: #3abdb5;
 }
+
+.item-descr{
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #DBDBD9;
+    position: relative;
+}
+.item-descr__toggle{
+    position: absolute;
+    bottom: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 5px 0 10px;
+    display: inline-block;
+    color: #272726;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 450;
+    letter-spacing: 5px;
+    background: #fff url(../img/content/bg-pt.png) center repeat;
+    transition: color .25s ease;
+}
+.item-descr__toggle:hover{
+    color: #3abdb5;
+}
+
+.item-descr__view{
+    max-height: 377px;
+    overflow: hidden;
+}
+.item-descr__view:before{
+    content:"";
+    display:block;
+    width: 100%;
+    height:92px;
+    position:absolute;
+    bottom:2px;
+    background:linear-gradient(180deg, rgba(255, 255, 255, 0.00) 2.87%, #FFF 69.9%);
+}
+
+.item-descr.active .item-descr__view{
+    max-height: unset;
+}
+.item-descr.active .item-descr__view:before{
+    display: none;
+}
+
+
+.popup-modal.m-form{
+    max-width: 700px;
+    padding: 43px 45px 31px 40px;
+}
+
+.popup-modal.m-form .page-form {
+    margin-bottom: 0;
+    background: transparent;
+    border: 0;
+    padding: 0;
+}
+.necc{
+    color: red;
+}
+
 @media screen and (max-width: 1440px) {
     .top-search__input {
         width: calc(100vw - 580px);
@@ -4386,6 +4489,10 @@ a.page-footer-menu__top:hover {
     .c-map-wrap {
         height: 480px;
     }
+    .popup-modal.m-form {
+        max-width: 100%;
+        padding: 43px 25px 31px 25px;
+    }
 }
 @media screen and (max-width: 850px) {
     .page-footer-menu {
@@ -4517,32 +4624,38 @@ a.page-footer-menu__top:hover {
     }
     .page-popup h1,
     .popup h1,
+    .popup-modal h1,
     .workarea h1 {
         font-size: 34px;
         letter-spacing: 6px;
     }
     .page-popup h2,
     .popup h2,
+    .popup-modal h2,
     .workarea h2 {
         font-size: 35px;
     }
     .page-popup h3,
     .popup h3,
+    .popup-modal h3,
     .workarea h3 {
         font-size: 31px;
     }
     .page-popup h4,
     .popup h4,
+    .popup-modal h4,
     .workarea h4 {
         font-size: 27px;
     }
     .page-popup h5,
     .popup h5,
+    .popup-modal h5,
     .workarea h5 {
         font-size: 24px;
     }
     .page-popup h6,
     .popup h6,
+    .popup-modal h6,
     .workarea h6 {
         font-size: 20px;
     }
@@ -4724,31 +4837,37 @@ a.page-footer-menu__top:hover {
     }
     .page-popup h1,
     .popup h1,
+    .popup-modal h1,
     .workarea h1 {
         font-size: 32px;
         letter-spacing: 6px;
     }
     .page-popup h2,
+    .popup-modal h2,
     .popup h2,
     .workarea h2 {
         font-size: 30px;
     }
     .page-popup h3,
+    .popup-modal h3,
     .popup h3,
     .workarea h3 {
         font-size: 26px;
     }
     .page-popup h4,
+    .popup-modal h4,
     .popup h4,
     .workarea h4 {
         font-size: 23px;
     }
     .page-popup h5,
+    .popup-modal h5,
     .popup h5,
     .workarea h5 {
         font-size: 20px;
     }
     .page-popup h6,
+    .popup-modal h6,
     .popup h6,
     .workarea h6 {
         font-size: 18px;
