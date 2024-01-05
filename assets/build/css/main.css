@@ -3609,6 +3609,7 @@ a.collection__top.active i {
     flex: 1;
     overflow: hidden;
     position: relative;
+    padding-right: 15px;
 }
 .item-collection__view .main-collections-view__label {
     position: absolute;
@@ -3617,8 +3618,8 @@ a.collection__top.active i {
     z-index: 3;
 }
 .item-collection__info {
-    width: 540px;
-    margin-left: 30px;
+    width: 50%;
+    padding-left: 15px;
 }
 .item-collection-for {
     background: #ededec;
@@ -4201,7 +4202,7 @@ a.page-footer-menu__top:hover {
 }
 
 .item-descr__view{
-    max-height: 377px;
+    max-height: 222px;
     overflow: hidden;
 }
 .item-descr__view:before{
@@ -4330,6 +4331,9 @@ a.page-footer-menu__top:hover {
     }
 }
 @media screen and (max-width: 1100px) {
+    .item-descr__view {
+        max-height: 247px;
+    }
     .page-footer-menu {
         margin-right: 40px;
     }
@@ -4341,7 +4345,7 @@ a.page-footer-menu__top:hover {
     }
     .item-collection__info {
         width: 360px;
-        margin-left: 20px;
+        margin-left: 0;
     }
     .main-title {
         flex-wrap: wrap;
@@ -4545,10 +4549,12 @@ a.page-footer-menu__top:hover {
     }
     .item-collection__view {
         flex: initial;
+        padding-right: 0;
     }
     .item-collection__info {
         width: 100%;
         margin-left: 0;
+        padding-left: 0;
     }
     .page-aside {
         width: 200px;
