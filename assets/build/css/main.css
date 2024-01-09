@@ -4238,6 +4238,12 @@ a.page-footer-menu__top:hover {
     color: red;
 }
 
+.popup-form-top{
+    background: #F6F6F6;
+    padding: 11px 20px;
+    margin: -15px 0 30px;
+}
+
 @media screen and (max-width: 1440px) {
     .top-search__input {
         width: calc(100vw - 580px);
