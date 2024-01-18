@@ -219,6 +219,7 @@ body {
     color: #272726;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
 input,
 textarea {
@@ -707,17 +708,44 @@ textarea {
     position: absolute;
     top: 100%;
     left: 0;
-    width: 100%;
+    /* width: 100vw; */
     background: #fff;
     padding: 27px 0;
     transform: translateY(-100%);
     transition: transform 0.25s ease;
     z-index: -1;
+    min-width: 500px;
+}
+.page-header-submenu:before{
+    content: "";
+    display: block;
+    height: 100%;
+    width: 300vw;
+    background: #fff;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+/* 
+    border-width: 4px;
+    border-style: solid;
+    border-image: linear-gradient(160.06deg, #b09580 21.8%, #82d6db 100%); */
+}
+.page-header-submenu:after{
+    content: "";
+    display: block;
+    height: 3px;
+    width: 300vw;
+    background: linear-gradient(160.06deg, #b09580 21.8%, #82d6db 100%);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
 }
 .page-header-submenu.active {
     transform: translateY(0);
 }
-.page-header-submenu:before {
+/* .page-header-submenu:before {
     content: "";
     display: block;
     width: 100%;
@@ -726,10 +754,10 @@ textarea {
     position: absolute;
     top: 0;
     left: 0;
-}
+} */
 .page-header-submenu__wrap {
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
 }
 .page-header-submenu__link {
     color: #272726;
@@ -743,6 +771,10 @@ textarea {
 }
 .page-header-submenu__list {
     padding: 0 20px;
+    /* margin-left: -3px; */
+    transform: translateX(-25%);
+    position: relative;
+    z-index: 2;
 }
 .page-header-submenu__top {
     margin-bottom: 20px;
@@ -802,6 +834,7 @@ textarea {
 }
 .page-header-menu__item {
     margin-right: 42px;
+    position: relative;
 }
 .page-header-menu__item:last-child {
     margin-right: 0;
@@ -1070,6 +1103,7 @@ textarea {
 .menu-mobile-sub .page-header-submenu__list {
     padding: 0;
     margin: 0 0 30px 0;
+    transform: none;
 }
 .menu-mobile-sub .page-header-submenu__list:last-child {
     margin-bottom: 0;
