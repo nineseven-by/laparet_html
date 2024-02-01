@@ -1388,9 +1388,13 @@ a.page-breadcrumbs__link:hover {
     font-size: 14px;
     letter-spacing: 3px;
     margin-bottom: 3px;
+    display: block;
 }
 .page-form .iti {
-    display: block;
+    display: block!important;
+}
+.iti--allow-dropdown .iti__flag-container:hover .iti__selected-flag {
+    background-color: transparent;
 }
 .page-form .iti input[type="tel"] {
     padding-left: 45px;
