@@ -290,6 +290,9 @@ textarea {
     text-transform: uppercase;
     letter-spacing: 10px;
 }
+.popup-modal h2{
+    font-size: 36px;
+}
 .page-popup h3,
 .popup-modal h3,
 .popup h3,
@@ -394,7 +397,7 @@ textarea {
 .workarea textarea {
     display: block;
     width: 100%;
-    min-height: 120px;
+    min-height: 100px;
     resize: vertical;
     color: #272726;
     border: 0;
@@ -1365,7 +1368,7 @@ a.page-breadcrumbs__link:hover {
     padding: 44px 59px 52px 52px;
 }
 .page-form__item {
-    margin-bottom: 33.5px;
+    margin-bottom: 15px;
     position: relative;
 }
 .page-form__item.m-phone {
@@ -1454,7 +1457,7 @@ a.page-breadcrumbs__link:hover {
     padding: 0;
     background: 0 0;
     color: #272726;
-    font-size: 55px;
+    font-size: 40px;
     text-transform: uppercase;
     letter-spacing: 10px;
     line-height: 1;
@@ -4701,6 +4704,9 @@ a.page-footer-menu__top:hover {
     .popup-modal h2,
     .workarea h2 {
         font-size: 35px;
+    }
+    .popup-modal h2{
+        font-size: 28px;
     }
     .page-popup h3,
     .popup h3,
