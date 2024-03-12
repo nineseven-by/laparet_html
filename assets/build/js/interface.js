@@ -209,14 +209,14 @@ $(document).ready(function() {
 	if($('.m-index').length>0){
 		gsap.registerPlugin(ScrollTrigger);
 
-		gsap.to(".laparet__img", {
-			yPercent: -20,
-			ease: "none",
-			scrollTrigger: {
-			  	trigger: '.laparet',
-			  	scrub: true
-			}, 
-		});
+		// gsap.to(".laparet__img", {
+		// 	yPercent: -20,
+		// 	ease: "none",
+		// 	scrollTrigger: {
+		// 	  	trigger: '.laparet',
+		// 	  	scrub: true
+		// 	}, 
+		// });
 		gsap.to(".laparet__info", {
 			yPercent: 20,
 			ease: "none",

@@ -272,7 +272,7 @@ textarea {
 .workarea h1 {
     margin: 0;
     margin-bottom: 30px;
-    font-size: 55px;
+    font-size: 50px;
     line-height: 1.2;
     font-weight: 400;
     text-transform: uppercase;
@@ -284,7 +284,7 @@ textarea {
 .workarea h2 {
     margin: 0;
     margin-bottom: 29px;
-    font-size: 50px;
+    font-size: 44px;
     line-height: 1.2;
     font-weight: 400;
     text-transform: uppercase;
@@ -2144,8 +2144,8 @@ a.collection__top.active i {
     z-index: 2;
 }
 .hero-info__title {
-    font-size: 42px;
-    line-height: 56px;
+    font-size: 37px;
+    line-height: 50px;
     letter-spacing: 8px;
     text-transform: uppercase;
     margin-bottom: 53px;
@@ -2486,10 +2486,10 @@ a.collection__top.active i {
 .laparet__wrap {
     display: flex;
     align-items: center;
+    padding: 40px 0 0;
 }
 .laparet__img {
     width: 50%;
-    margin-top: -110px;
     padding-right: 25px;
 }
 .laparet__img img {
@@ -2498,10 +2498,10 @@ a.collection__top.active i {
 }
 .laparet__info {
     width: 50%;
-    padding: 105px 0 35px 25px;
+    padding: 0 0 35px 25px;
 }
 .laparet__title {
-    margin-bottom: 35px;
+    margin-bottom: 16px;
 }
 .laparet__title h2 {
     margin-bottom: 0;
@@ -2513,6 +2513,12 @@ a.collection__top.active i {
 }
 .laparet__txt {
     max-width: 515px;
+}
+.laparet__txt p{
+    margin-bottom: 13px;
+}
+.laparet__txt p:last-child{
+    margin-bottom: 0;
 }
 .laparet__txt a {
     position: relative;
@@ -4423,7 +4429,7 @@ a.page-footer-menu__top:hover {
         margin-bottom: 60px;
     }
     .laparet__info {
-        padding: 40px 0 40px 15px;
+        padding: 0 0 0 15px;
     }
     .main-title__item:last-child {
         flex: initial;
@@ -4856,6 +4862,7 @@ a.page-footer-menu__top:hover {
     }
     .laparet__wrap {
         flex-wrap: wrap;
+        padding: 0;
     }
     .laparet__img {
         display: none;
